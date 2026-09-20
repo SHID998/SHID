@@ -77,31 +77,24 @@ ul {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.logo-image {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-}
-
-.logo span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.logo {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--white);
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logo-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .logo-icon {
@@ -388,37 +381,71 @@ ul {
   flex-grow: 1;
 }
 
-/* PDF Button Styles */
-.pdf-btn {
+/* ==========================================================================
+   Side-by-Side Action Buttons (View + Download)
+   ========================================================================== */
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   width: 100%;
-  background-color: var(--sky-blue);
-  color: var(--white);
-  border: none;
-  padding: 13px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+/* Base button properties */
+.pdf-btn,
+.download-btn {
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.92rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  transition: var(--transition-fast);
+  gap: 8px;
+  text-decoration: none;
   box-sizing: border-box;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* 1. View PDF Button (Solid Blue) */
+.pdf-btn {
+  background-color: var(--sky-blue);
+  color: var(--white);
+  border: 1px solid var(--sky-blue);
 }
 
 .pdf-btn:hover {
   background-color: var(--sky-blue-hover);
-  box-shadow: var(--shadow-glow);
+  border-color: var(--sky-blue-hover);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .pdf-btn i {
-  font-size: 1.1rem;
-  transition: var(--transition-fast);
+  font-size: 1rem;
 }
 
-.pdf-btn:hover i {
-  transform: scale(1.15);
+/* 2. Download Button (Exact match to provided screenshot) */
+.download-btn {
+  background-color: rgba(30, 48, 80, 0.5); /* Subtle dark navy glass fill */
+  color: #3b82f6;                          /* Sky Blue icon and text */
+  border: 1.5px solid #2563eb;             /* Clean blue outline border */
+}
+
+.download-btn i {
+  font-size: 1.05rem;
+}
+
+.download-btn:hover {
+  background-color: rgba(37, 99, 235, 0.22);
+  border-color: #60a5fa;
+  color: #60a5fa;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
