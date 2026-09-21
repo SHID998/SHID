@@ -321,7 +321,28 @@ function initCounterStats() {
     });
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleUpdatesBtn');
+  const gridWrapper = document.getElementById('updatesGridWrapper');
+  const toggleText = document.getElementById('toggleUpdatesText');
+  const toggleIcon = document.getElementById('toggleUpdatesIcon');
 
+  if (!toggleBtn || !gridWrapper) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isCollapsed = gridWrapper.classList.toggle('collapsed');
+
+    if (isCollapsed) {
+      toggleText.textContent = 'Show';
+      toggleIcon.className = 'fa-solid fa-chevron-down';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      toggleText.textContent = 'Hide';
+      toggleIcon.className = 'fa-solid fa-chevron-up';
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 // Call initializer
 document.addEventListener('DOMContentLoaded', initCounterStats);
 
