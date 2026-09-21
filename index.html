@@ -2398,93 +2398,36 @@ if (searchBtn) {
   </div>
 </section>
 
-<!-- Glowing Line Divider -->
-<div class="glowing-divider">
-  <div class="divider-line"></div>
-  <div class="glowing-node"></div>
-</div>
-
-<!-- ================================================== -->
-<!-- FORSKO EXAM COUNTDOWN SECTION                     -->
-<!-- ================================================== -->
-<section class="exam-countdown" id="examCountdownSection">
-  <div class="countdown-container">
-    <div class="countdown-card">
-      <div class="countdown-card-glow"></div>
-
-      <!-- Header Information -->
-      <div class="countdown-header">
-        <span class="countdown-badge">
-          <i class="fa-solid fa-graduation-cap"></i> Upcoming Exam
-        </span>
-        <h2 class="countdown-title">B.Sc. Computer Science</h2>
-        <p class="countdown-subtitle">Semester I & III — University Examination</p>
-      </div>
-
-      <!-- Live Countdown Timer -->
-      <div class="countdown-timer" id="forskoCountdownTimer">
-        <div class="timer-box">
-          <span class="timer-number" id="countdownDays">00</span>
-          <span class="timer-label">DAYS</span>
-        </div>
-        <div class="timer-separator">:</div>
-        <div class="timer-box">
-          <span class="timer-number" id="countdownHours">00</span>
-          <span class="timer-label">HOURS</span>
-        </div>
-        <div class="timer-separator">:</div>
-        <div class="timer-box">
-          <span class="timer-number" id="countdownMinutes">00</span>
-          <span class="timer-label">MINUTES</span>
-        </div>
-        <div class="timer-separator">:</div>
-        <div class="timer-box">
-          <span class="timer-number" id="countdownSeconds">00</span>
-          <span class="timer-label">SECONDS</span>
-        </div>
-      </div>
-
-      <!-- Zero / Expired Message State -->
-      <div class="countdown-expired-msg hidden" id="countdownExpiredMsg">
-        <span class="expired-badge">🎉 Exam Started</span>
-      </div>
-
-      <!-- Footer Info & Action Button -->
-      <div class="countdown-footer">
-        <div class="exam-date-info">
-          <i class="fa-regular fa-calendar-days"></i>
-          <span>Exam Starts: <strong>02 November 2026</strong></span>
-        </div>
-        <a href="timetable.pdf" class="schedule-btn">
-          <span>View Exam Schedule</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- Glowing Line Divider -->
 <div class="glowing-divider">
   <div class="divider-line"></div>
   <div class="glowing-node"></div>
 </div>
+
 
 <!-- ==========================================
      Forsko - Latest Updates Grid Section
      ========================================== -->
 <section class="updates-section" id="latest-updates">
   <div class="updates-container">
+    
     <!-- Section Header -->
     <div class="section-header">
+      <!-- Side Positioned Small Collapse Button -->
+      <button type="button" class="updates-toggle-btn" id="toggleUpdatesBtn" aria-expanded="true">
+        <span id="toggleUpdatesText">Hide</span>
+        <i class="fa-solid fa-chevron-up" id="toggleUpdatesIcon"></i>
+      </button>
+
       <span class="sub-badge">Real-Time Feed</span>
       <h2>Latest Updates</h2>
       <p class="section-subtitle"><b>Stay informed with the newest study notes, past papers, and university curriculum changes.</b></p>
     </div>
 
-    <!-- Updates Horizontal Grid (3 Cards Per Row) -->
-    <div class="updates-grid">
+    <!-- Collapsible Grid Wrapper -->
+    <div class="updates-grid-wrapper" id="updatesGridWrapper">
+      <div class="updates-grid">
 
 
  <!-- Item 1: Notes -->
@@ -2740,11 +2683,198 @@ if (searchBtn) {
   </div>
 </section>
 
+
 <!-- Glowing Line Divider -->
 <div class="glowing-divider">
   <div class="divider-line"></div>
   <div class="glowing-node"></div>
 </div>
+
+<!-- ================================================== -->
+<!-- FORSKO 3-HORIZONTAL EXAM COUNTDOWNS SECTION       -->
+<!-- ================================================== -->
+<section class="exam-countdown" id="examCountdownSection">
+  <div class="countdown-container">
+    
+    <!-- Section Header -->
+    <div class="countdown-section-header">
+      <span class="countdown-main-badge">
+        <i class="fa-solid fa-graduation-cap"></i> Academic Schedule
+      </span>
+      <h2 class="countdown-main-title">Upcoming Examination Countdowns</h2>
+      <p class="countdown-main-subtitle">Track your remaining study time and stay motivated for SGBAU university exams.</p>
+    </div>
+
+    <!-- 3 Horizontal Cards Grid -->
+    <div class="countdowns-grid">
+
+      <!-- CARD 1: FIRST YEAR EXAMS -->
+      <div class="countdown-card">
+        <div class="countdown-card-glow"></div>
+
+        <div class="countdown-card-header">
+          <span class="card-tag tag-fe">Regular</span>
+          <h3 class="card-title">Sem I & III Theory</h3>
+          <p class="card-subtitle">SGBAU University Written Exam</p>
+        </div>
+
+        <!-- Timer 1 -->
+        <div class="countdown-timer" id="timer-1">
+          <div class="timer-box">
+            <span class="timer-number" id="days-1">00</span>
+            <span class="timer-label">DAYS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="hours-1">00</span>
+            <span class="timer-label">HRS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="minutes-1">00</span>
+            <span class="timer-label">MIN</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="seconds-1">00</span>
+            <span class="timer-label">SEC</span>
+          </div>
+        </div>
+
+        <div class="countdown-expired-msg hidden" id="expired-1">
+          <span class="expired-badge">🎉 Exam Started</span>
+        </div>
+
+        <!-- Interactive Motivational Box -->
+        <div class="motivation-box" id="motivation-1" title="Click to refresh motivation!">
+          <i class="fa-solid fa-lightbulb motivation-icon"></i>
+          <p class="motivation-text" id="quote-1">
+            "Every line of code you write brings you closer to your goal. Stay focused!"
+          </p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <span class="exam-date"><i class="fa-regular fa-calendar-days"></i> 02 Nov 2026</span>
+          <a href="exam-regular.pdf" class="card-btn">Schedule <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- CARD 2: SECOND YEAR EXAMS -->
+      <div class="countdown-card highlight-card">
+        <div class="countdown-card-glow"></div>
+
+        <div class="countdown-card-header">
+          <span class="card-tag tag-se">Back</span>
+          <h3 class="card-title">Sem II & IV Theory</h3>
+          <p class="card-subtitle">SGBAU University Written Exam</p>
+        </div>
+
+        <!-- Timer 2 -->
+        <div class="countdown-timer" id="timer-2">
+          <div class="timer-box">
+            <span class="timer-number" id="days-2">00</span>
+            <span class="timer-label">DAYS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="hours-2">00</span>
+            <span class="timer-label">HRS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="minutes-2">00</span>
+            <span class="timer-label">MIN</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="seconds-2">00</span>
+            <span class="timer-label">SEC</span>
+          </div>
+        </div>
+
+        <div class="countdown-expired-msg hidden" id="expired-2">
+          <span class="expired-badge">🎉 Exam Started</span>
+        </div>
+
+        <!-- Interactive Motivational Box -->
+        <div class="motivation-box" id="motivation-2" title="Click to refresh motivation!">
+          <i class="fa-solid fa-fire motivation-icon"></i>
+          <p class="motivation-text" id="quote-2">
+            "Consistency beats intensity. 1 hour of daily revision creates top rankers!"
+          </p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <span class="exam-date"><i class="fa-regular fa-calendar-days"></i> 01 Oct 2026</span>
+          <a href="exam-back.pdf" class="card-btn">Schedule <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- CARD 3: THIRD YEAR EXAMS -->
+      <div class="countdown-card">
+        <div class="countdown-card-glow"></div>
+
+        <div class="countdown-card-header">
+          <span class="card-tag tag-te">Third Year</span>
+          <h3 class="card-title">Sem V</h3>
+          <p class="card-subtitle">SGBAU University Written Exam</p>
+        </div>
+
+        <!-- Timer 3 -->
+        <div class="countdown-timer" id="timer-3">
+          <div class="timer-box">
+            <span class="timer-number" id="days-3">00</span>
+            <span class="timer-label">DAYS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="hours-3">00</span>
+            <span class="timer-label">HRS</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="minutes-3">00</span>
+            <span class="timer-label">MIN</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="seconds-3">00</span>
+            <span class="timer-label">SEC</span>
+          </div>
+        </div>
+
+        <div class="countdown-expired-msg hidden" id="expired-3">
+          <span class="expired-badge">🎉 Exam Started</span>
+        </div>
+
+        <!-- Interactive Motivational Box -->
+        <div class="motivation-box" id="motivation-3" title="Click to refresh motivation!">
+          <i class="fa-solid fa-trophy motivation-icon"></i>
+          <p class="motivation-text" id="quote-3">
+            "You are building your future. Finish your degree strong and make it count!"
+          </p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <span class="exam-date"><i class="fa-regular fa-calendar-days"></i> Coming Soon</span>
+          <a href="exam-sem5.pdf" class="card-btn">Schedule <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Glowing Line Divider -->
+<div class="glowing-divider">
+  <div class="divider-line"></div>
+  <div class="glowing-node"></div>
+</div>
+
+
 
 <!-- ==========================================
      Forsko - Interactive Statistics Section
