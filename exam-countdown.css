@@ -1,115 +1,153 @@
 /* ==========================================================================
-   FORSKO - Exam Countdown Stylesheet
+   FORSKO - 3 Horizontal Countdowns & Motivational Cards
    Theme: Dark Navy (#0f172a) | Sky Blue (#3b82f6) | Glassmorphism
    ========================================================================== */
 
 .exam-countdown {
-  padding: 60px 24px;
+  padding: 80px 24px;
   background-color: #0f172a;
   position: relative;
   width: 100%;
 }
 
 .countdown-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Glassmorphism Main Card */
-.countdown-card {
-  background: rgba(30, 41, 59, 0.7);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 40px 32px;
-  position: relative;
-  overflow: hidden;
+/* Section Header */
+.countdown-section-header {
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease;
+  margin-bottom: 48px;
 }
 
-/* Ambient Radial Glow */
-.countdown-card-glow {
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.countdown-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3);
-}
-
-/* Header Elements */
-.countdown-header {
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 2;
-}
-
-.countdown-badge {
+.countdown-main-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: 30px;
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: #3b82f6;
   font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
 
-.countdown-title {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+.countdown-main-title {
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 2.2rem;
   font-weight: 800;
   color: #ffffff;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px 0;
   letter-spacing: -0.5px;
 }
 
-.countdown-subtitle {
+.countdown-main-subtitle {
   font-size: 1.05rem;
   color: #94a3b8;
   margin: 0;
   font-weight: 400;
 }
 
-/* Timer Boxes Grid */
+/* 3 Horizontal Cards Grid */
+.countdowns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 Cards Side-by-Side */
+  gap: 24px;
+}
+
+/* Glassmorphism Card Style */
+.countdown-card {
+  background: rgba(30, 41, 59, 0.75);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.highlight-card {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.countdown-card-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hover State: Lift & Sky Blue Glow */
+.countdown-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Card Header */
+.countdown-card-header {
+  margin-bottom: 20px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-fe { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+.tag-se { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3); }
+.tag-te { background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.card-subtitle {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Compact Timer Grid */
 .countdown-timer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .timer-box {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 16px 20px;
-  min-width: 95px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  border-radius: 10px;
+  padding: 10px 6px;
+  flex: 1;
+  text-align: center;
+  transition: border-color 0.25s ease;
 }
 
 .countdown-card:hover .timer-box {
@@ -117,184 +155,145 @@
 }
 
 .timer-number {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.45rem;
   font-weight: 800;
   color: #ffffff;
+  display: block;
   line-height: 1.1;
-  letter-spacing: -0.5px;
 }
 
 .timer-label {
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 700;
   color: #3b82f6;
-  letter-spacing: 1.5px;
-  margin-top: 6px;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  display: block;
 }
 
-.timer-separator {
-  font-size: 2rem;
+.timer-colon {
+  font-size: 1.2rem;
   font-weight: 700;
   color: #3b82f6;
-  margin-bottom: 18px;
-  opacity: 0.8;
+  opacity: 0.6;
+  padding: 0 2px;
 }
 
-/* Expired Message State */
-.countdown-expired-msg {
-  padding: 20px 0;
-  position: relative;
-  z-index: 2;
+/* Interactive Motivation Box */
+.motivation-box {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.countdown-expired-msg.hidden {
-  display: none !important;
+.motivation-box:hover {
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: scale(1.02);
 }
 
-.expired-badge {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 12px 28px;
-  border-radius: 40px;
-  display: inline-block;
+.motivation-icon {
+  color: #f59e0b;
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
-/* Footer Section */
-.countdown-footer {
+.motivation-text {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+  margin: 0;
+  font-style: italic;
+  transition: opacity 0.2s ease;
+}
+
+/* Card Footer */
+.card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 36px;
-  padding-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-  z-index: 2;
+  margin-top: auto;
 }
 
-.exam-date-info {
+.exam-date {
+  font-size: 0.82rem;
+  color: #94a3b8;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #94a3b8;
-  font-size: 0.95rem;
+  gap: 6px;
 }
 
-.exam-date-info i {
+.exam-date i {
   color: #3b82f6;
-  font-size: 1.1rem;
 }
 
-.exam-date-info strong {
+.card-btn {
+  background: #3b82f6;
   color: #ffffff;
-  font-weight: 600;
-}
-
-/* Schedule Button */
-.schedule-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  background-color: #3b82f6;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  transition: background-color 0.25s ease,
-              transform 0.25s ease,
-              box-shadow 0.25s ease;
+  gap: 6px;
+  transition: all 0.25s ease;
 }
 
-.schedule-btn:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+.card-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
 }
 
-.schedule-btn i {
+.card-btn i {
   transition: transform 0.25s ease;
 }
 
-.schedule-btn:hover i {
+.card-btn:hover i {
   transform: translateX(4px);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .exam-countdown {
-    padding: 40px 16px;
-  }
+/* Expired State */
+.countdown-expired-msg.hidden { display: none !important; }
+.expired-badge {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
-  .countdown-card {
-    padding: 28px 20px;
-  }
-
-  .countdown-title {
-    font-size: 1.75rem;
-  }
-
-  .countdown-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .countdown-timer {
-    gap: 8px;
-  }
-
-  .timer-box {
-    padding: 12px 8px;
-    min-width: 65px;
-    border-radius: 10px;
-  }
-
-  .timer-number {
-    font-size: 1.75rem;
-  }
-
-  .timer-label {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-  }
-
-  .timer-separator {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  .countdown-footer {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .schedule-btn {
-    width: 100%;
-    justify-content: center;
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .countdowns-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablet */
   }
 }
 
-@media (max-width: 480px) {
-  .countdown-timer {
-    gap: 5px;
+@media (max-width: 768px) {
+  .countdowns-grid {
+    grid-template-columns: 1fr; /* 1 Column on Mobile */
   }
 
-  .timer-box {
-    min-width: 58px;
-    padding: 10px 4px;
-  }
-
-  .timer-number {
-    font-size: 1.4rem;
-  }
-
-  .timer-label {
-    font-size: 0.58rem;
+  .countdown-main-title {
+    font-size: 1.8rem;
   }
 }
