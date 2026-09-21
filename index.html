@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- Forsko Splash Screen Stylesheet -->
 <link rel="stylesheet" href="splash-screen.css">
+<link rel="stylesheet" href="exam-countdown.css">
   <style>
     /* moved inline styles from HTML to CSS file scope */
     .sub-badge.center { display: block; text-align: center; }
@@ -2403,6 +2404,73 @@ if (searchBtn) {
   <div class="glowing-node"></div>
 </div>
 
+<!-- ================================================== -->
+<!-- FORSKO EXAM COUNTDOWN SECTION                     -->
+<!-- ================================================== -->
+<section class="exam-countdown" id="examCountdownSection">
+  <div class="countdown-container">
+    <div class="countdown-card">
+      <div class="countdown-card-glow"></div>
+
+      <!-- Header Information -->
+      <div class="countdown-header">
+        <span class="countdown-badge">
+          <i class="fa-solid fa-graduation-cap"></i> Upcoming Exam
+        </span>
+        <h2 class="countdown-title">B.Sc. Computer Science</h2>
+        <p class="countdown-subtitle">Semester I & III — University Examination</p>
+      </div>
+
+      <!-- Live Countdown Timer -->
+      <div class="countdown-timer" id="forskoCountdownTimer">
+        <div class="timer-box">
+          <span class="timer-number" id="countdownDays">00</span>
+          <span class="timer-label">DAYS</span>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-box">
+          <span class="timer-number" id="countdownHours">00</span>
+          <span class="timer-label">HOURS</span>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-box">
+          <span class="timer-number" id="countdownMinutes">00</span>
+          <span class="timer-label">MINUTES</span>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-box">
+          <span class="timer-number" id="countdownSeconds">00</span>
+          <span class="timer-label">SECONDS</span>
+        </div>
+      </div>
+
+      <!-- Zero / Expired Message State -->
+      <div class="countdown-expired-msg hidden" id="countdownExpiredMsg">
+        <span class="expired-badge">🎉 Exam Started</span>
+      </div>
+
+      <!-- Footer Info & Action Button -->
+      <div class="countdown-footer">
+        <div class="exam-date-info">
+          <i class="fa-regular fa-calendar-days"></i>
+          <span>Exam Starts: <strong>02 November 2026</strong></span>
+        </div>
+        <a href="timetable.pdf" class="schedule-btn">
+          <span>View Exam Schedule</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Glowing Line Divider -->
+<div class="glowing-divider">
+  <div class="divider-line"></div>
+  <div class="glowing-node"></div>
+</div>
+
 <!-- ==========================================
      Forsko - Latest Updates Grid Section
      ========================================== -->
@@ -3059,6 +3127,7 @@ if (searchBtn) {
   <!-- Unified Main JavaScript -->
   <script src="script.js"></script>
   <script src="command-palette.js"></script>
+  <script src="exam-countdown.js"></script>
   <!-- Forsko Splash Screen Script -->
 <script src="splash-screen.js"></script>
 </body>
