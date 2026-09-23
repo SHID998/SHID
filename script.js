@@ -173,7 +173,7 @@ function initFAB() {
   if (fabFeedback) {
     fabFeedback.addEventListener('click', () => {
       closeFabMenu();
-      window.location.href = 'https://forms.gle/d7s2tebfezbqtuK68';
+      window.location.href = 'https://forms.gle/DFx5E4TMNuvpb2tU6';
     });
   }
 
