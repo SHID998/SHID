@@ -121,70 +121,277 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ==========================================================================
-   2. Floating Action Button (FAB)
-   ========================================================================== */
-function initFAB() {
-  const fabContainer = document.getElementById('fabContainer');
-  const fabMainBtn = document.getElementById('fabMainBtn');
-  const fabMenu = document.getElementById('fabMenu');
-  const fabSearch = document.getElementById('fabSearch');
-  const fabBackToTop = document.getElementById('fabBackToTop');
-  const fabFeedback = document.getElementById('fabFeedback');
+/**
+ * Forsko
+ * iOS 18 Liquid Glass Floating Action Button
+ */
 
-  if (!fabContainer || !fabMainBtn) return;
+(function () {
+  "use strict";
 
-  function toggleFabMenu() {
-    const isActive = fabContainer.classList.toggle('active');
-    fabMainBtn.setAttribute('aria-expanded', isActive);
-    if (fabMenu) fabMenu.setAttribute('aria-hidden', !isActive);
-  }
+  function initFAB() {
+    const fabContainer = document.getElementById("fabContainer");
+    const fabMainBtn = document.getElementById("fabMainBtn");
+    const fabMenu = document.getElementById("fabMenu");
+    const fabBackdrop = document.getElementById("fabBackdrop");
+    const fabProgressCircle = document.getElementById("fabProgressCircle");
 
-  function closeFabMenu() {
-    if (fabContainer.classList.contains('active')) {
-      fabContainer.classList.remove('active');
-      fabMainBtn.setAttribute('aria-expanded', 'false');
-      if (fabMenu) fabMenu.setAttribute('aria-hidden', 'true');
+    const fabSearch = document.getElementById("fabSearch");
+    const fabBackToTop = document.getElementById("fabBackToTop");
+    const fabFeedback = document.getElementById("fabFeedback");
+
+    const menuItems = document.querySelectorAll(".fab-menu-item");
+
+    // Stop safely if FAB doesn't exist on the page
+    if (!fabContainer || !fabMainBtn) {
+      return;
     }
-  }
 
-  fabMainBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleFabMenu();
-  });
+    let lastScrollY = window.scrollY || 0;
+    let ticking = false;
 
-  if (fabSearch) {
-    fabSearch.addEventListener('click', () => {
-      closeFabMenu();
-      const searchInput = document.getElementById('searchInput');
-      const searchSection = document.getElementById('search');
-      if (searchSection) searchSection.scrollIntoView({ behavior: 'smooth' });
-      if (searchInput) setTimeout(() => searchInput.focus(), 400);
+    /* ==========================================
+       OPEN / CLOSE MENU
+       ========================================== */
+
+    function openFabMenu() {
+      fabContainer.classList.add("active");
+
+      if (fabBackdrop) {
+        fabBackdrop.classList.add("active");
+      }
+
+      fabMainBtn.setAttribute("aria-expanded", "true");
+
+      if (fabMenu) {
+        fabMenu.setAttribute("aria-hidden", "false");
+      }
+    }
+
+    function closeFabMenu() {
+      fabContainer.classList.remove("active");
+
+      if (fabBackdrop) {
+        fabBackdrop.classList.remove("active");
+      }
+
+      fabMainBtn.setAttribute("aria-expanded", "false");
+
+      if (fabMenu) {
+        fabMenu.setAttribute("aria-hidden", "true");
+      }
+    }
+
+    function toggleFabMenu(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      const isActive = fabContainer.classList.contains("active");
+
+      if (isActive) {
+        closeFabMenu();
+      } else {
+        openFabMenu();
+      }
+    }
+
+    /* ==========================================
+       MAIN BUTTON
+       ========================================== */
+
+    fabMainBtn.addEventListener("click", toggleFabMenu);
+
+    /* ==========================================
+       BACKDROP
+       ========================================== */
+
+    if (fabBackdrop) {
+      fabBackdrop.addEventListener("click", closeFabMenu);
+    }
+
+    /* ==========================================
+       SEARCH
+       ========================================== */
+
+    if (fabSearch) {
+      fabSearch.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        closeFabMenu();
+
+        const searchInput =
+          document.getElementById("searchInput") ||
+          document.getElementById("globalSearchInput");
+
+        const searchSection = document.getElementById("search");
+
+        if (searchSection) {
+          searchSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+
+        if (searchInput) {
+          setTimeout(function () {
+            searchInput.focus();
+          }, 500);
+        }
+      });
+    }
+
+    /* ==========================================
+       BACK TO TOP
+       ========================================== */
+
+    if (fabBackToTop) {
+      fabBackToTop.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        closeFabMenu();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
+
+    /* ==========================================
+       FEEDBACK
+       ========================================== */
+
+    if (fabFeedback) {
+      fabFeedback.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        closeFabMenu();
+
+        window.location.href =
+          "https://forms.gle/d7s2tebfezbqtuK68";
+      });
+    }
+
+    /* ==========================================
+       MENU LINKS
+       ========================================== */
+
+    menuItems.forEach(function (item) {
+      if (item.tagName === "A") {
+        item.addEventListener("click", function () {
+          closeFabMenu();
+        });
+      }
     });
-  }
 
-  if (fabBackToTop) {
-    fabBackToTop.addEventListener('click', () => {
-      closeFabMenu();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    /* ==========================================
+       OUTSIDE CLICK
+       ========================================== */
+
+    document.addEventListener("click", function (event) {
+      if (!fabContainer.classList.contains("active")) {
+        return;
+      }
+
+      if (!fabContainer.contains(event.target)) {
+        closeFabMenu();
+      }
     });
-  }
 
-  if (fabFeedback) {
-    fabFeedback.addEventListener('click', () => {
-      closeFabMenu();
-      window.location.href = 'https://forms.gle/DFx5E4TMNuvpb2tU6';
+    /* ==========================================
+       ESCAPE KEY
+       ========================================== */
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeFabMenu();
+      }
     });
+
+    /* ==========================================
+       SCROLL PROGRESS + AUTO HIDE
+       ========================================== */
+
+    function updateFABOnScroll() {
+      const currentScrollY = window.scrollY || 0;
+
+      const documentHeight =
+        document.documentElement.scrollHeight;
+
+      const viewportHeight =
+        window.innerHeight;
+
+      const totalHeight =
+        documentHeight - viewportHeight;
+
+      /* Scroll Progress */
+      if (fabProgressCircle && totalHeight > 0) {
+        const progress = Math.min(
+          Math.max(currentScrollY / totalHeight, 0),
+          1
+        );
+
+        const circumference = 170;
+        const dashOffset =
+          circumference - progress * circumference;
+
+        fabProgressCircle.style.strokeDashoffset =
+          dashOffset.toFixed(2);
+      }
+
+      /* Auto Hide */
+      if (!fabContainer.classList.contains("active")) {
+        if (
+          currentScrollY > lastScrollY &&
+          currentScrollY > 150
+        ) {
+          fabContainer.classList.add("fab-hidden");
+        } else {
+          fabContainer.classList.remove("fab-hidden");
+        }
+      } else {
+        fabContainer.classList.remove("fab-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateFABOnScroll);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    /* ==========================================
+       INITIAL STATE
+       ========================================== */
+
+    closeFabMenu();
+    updateFABOnScroll();
   }
 
-  document.addEventListener('click', (e) => {
-    if (!fabContainer.contains(e.target)) closeFabMenu();
-  });
+  /* ==========================================
+     SAFE INITIALIZATION
+     ========================================== */
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeFabMenu();
-  });
-}
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initFAB,
+      { once: true }
+    );
+  } else {
+    initFAB();
+  }
+})();
 
 
 // ==========================================
