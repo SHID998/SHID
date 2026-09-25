@@ -104,53 +104,152 @@
       </div>
     </div>
 
-    <!-- Hero Right: Interactive 3D Code Window Illustration -->
-    <div class="hero-illustration">
-      <div class="illustration-glow"></div>
+    <!-- Hero Right: FORSKO KNOWLEDGE UNIVERSE (Buffer-Free & Precision Locked) -->
+<div class="hero-illustration">
+  <div class="fk-universe-stage" id="fkKnowledgeUniverse" role="region" aria-label="Forsko Orbital Knowledge Network">
 
-      <!-- 3D Tilt Code Window -->
-      <div class="code-window glass-panel-3d" id="heroCodeWindow">
-        <!-- Glass Shimmer Sweep & Mouse Light Spotlight -->
-        <div class="code-glass-sweep"></div>
-        <div class="code-spotlight-light" id="codeSpotlight"></div>
-
-        <div class="window-header">
-          <div class="window-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <span class="window-title">forsko_for_seeking_knowledge.</span>
-        </div>
-
-        <div class="window-body">
-<pre><code><span class="kwd">class</span> <span class="cls">CS_Student</span> {
-  <span class="kwd">public static void</span> <span class="func">Main</span>() {
-    <span class="kwd">New</span> <span class="typ">Platform</span> forsko = <span class="kwd">For</span> <span class="typ">Seeking</span> <span class="kwd">Knowledge</span>();
-      forsko.<span class="func">GetSyllabus</span>();
-      forsko.<span class="func">GetNotes</span>();
-      forsko.<span class="func">GetPYQs</span>();
-      forsko.<span class="func">GetQuestionBank</span>();
-      forsko.<span class="func">GetSamplePapers</span>();
-        }
-        }
-      </code></pre>
-        </div>
-      </div>
-
-      <!-- Interactive Floating Badges -->
-      <div class="float-badge badge-1">
-        <i class="fa-solid fa-file-lines badge-icon"></i>
-        <span>100% Accurate Notes</span>
-      </div>
-
-      <div class="float-badge badge-2">
-        <i class="fa-solid fa-book-bookmark badge-icon"></i>
-        <span>Verified Syllabus</span>
-      </div>
-
+    <!-- Atmospheric Deep Glow & Cosmic Grid -->
+    <div class="fk-stage-backdrop" aria-hidden="true"></div>
+    <div class="fk-cosmic-grid" aria-hidden="true"></div>
+    <div class="fk-starfield" aria-hidden="true">
+      <span class="fk-spec fk-spec-1"></span>
+      <span class="fk-spec fk-spec-2"></span>
+      <span class="fk-spec fk-spec-3"></span>
+      <span class="fk-spec fk-spec-4"></span>
+      <span class="fk-spec fk-spec-5"></span>
+      <span class="fk-spec fk-spec-6"></span>
     </div>
+
+    <!-- Central Precision SVG Orbit Canvas -->
+    <svg class="fk-svg-radar" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="fkCosmicCoreGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+          <stop offset="60%" stop-color="#1e293b" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- Center Ambient Glow -->
+      <circle cx="290" cy="290" r="260" fill="url(#fkCosmicCoreGlow)" />
+
+      <!-- Concentric Orbital Tracks (R1: 120px, R2: 185px, R3: 250px) -->
+      <circle class="fk-radar-ring fk-ring-1" cx="290" cy="290" r="120" />
+      <circle class="fk-radar-ring fk-ring-2" cx="290" cy="290" r="185" />
+      <circle class="fk-radar-ring fk-ring-3" cx="290" cy="290" r="250" />
+
+      <!-- Orbital Target Markers -->
+      <g class="fk-radar-crosshairs">
+        <line x1="290" y1="30" x2="290" y2="40" />
+        <line x1="290" y1="540" x2="290" y2="550" />
+        <line x1="30" y1="290" x2="40" y2="290" />
+        <line x1="540" y1="290" x2="550" y2="290" />
+      </g>
+    </svg>
+
+    <!-- ==========================================
+         ORBIT 1: INNER RING (Radius 120px)
+         Syllabus & Notes
+         ========================================== -->
+    <div class="fk-orbit-tier fk-tier-1" data-orbit="1">
+      <!-- Node 1: Syllabus (Top - Electric Cyan) -->
+      <a href="syllabus.html" class="fk-node-carrier fk-pos-1-top" data-resource="syllabus">
+        <div class="fk-node-capsule fk-theme-cyan">
+          <i class="fa-solid fa-book-bookmark fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-above">
+          <strong class="fk-hud-title">Syllabus</strong>
+        </div>
+      </a>
+
+      <!-- Node 2: Notes (Bottom - Emerald Mint) -->
+      <a href="notes.html" class="fk-node-carrier fk-pos-1-bottom" data-resource="notes">
+        <div class="fk-node-capsule fk-theme-mint">
+          <i class="fa-solid fa-file-lines fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-below">
+          <strong class="fk-hud-title">Notes</strong>
+        </div>
+      </a>
+    </div>
+
+    <!-- ==========================================
+         ORBIT 2: MIDDLE RING (Radius 185px)
+         PYQs & Question Bank
+         ========================================== -->
+    <div class="fk-orbit-tier fk-tier-2" data-orbit="2">
+      <!-- Node 3: PYQs (Left - Solar Amber) -->
+      <a href="pyqs.html" class="fk-node-carrier fk-pos-2-left" data-resource="pyqs">
+        <div class="fk-node-capsule fk-theme-amber">
+          <i class="fa-solid fa-clock-rotate-left fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-below">
+          <strong class="fk-hud-title">PYQs</strong>
+        </div>
+      </a>
+
+      <!-- Node 4: Question Bank (Right - Electric Cobalt) -->
+      <a href="question-bank.html" class="fk-node-carrier fk-pos-2-right" data-resource="qb">
+        <div class="fk-node-capsule fk-theme-cobalt">
+          <i class="fa-solid fa-database fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-below">
+          <strong class="fk-hud-title">Question Banks</strong>
+        </div>
+      </a>
+    </div>
+
+    <!-- ==========================================
+         ORBIT 3: OUTER RING (Radius 250px)
+         Practicals & Paper Patterns
+         ========================================== -->
+    <div class="fk-orbit-tier fk-tier-3" data-orbit="3">
+      <!-- Node 5: Practicals (Bottom-Left - Ultraviolet Orchid) -->
+      <a href="practical.html" class="fk-node-carrier fk-pos-3-bl" data-resource="practicals">
+        <div class="fk-node-capsule fk-theme-orchid">
+          <i class="fa-solid fa-laptop-code fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-above">
+          <strong class="fk-hud-title">Practicals</strong>
+        </div>
+      </a>
+
+      <!-- Node 6: Paper Patterns (Top-Right - Hyper Rose) -->
+      <a href="paper-patterns.html" class="fk-node-carrier fk-pos-3-tr" data-resource="patterns">
+        <div class="fk-node-capsule fk-theme-rose">
+          <i class="fa-solid fa-chart-pie fk-ico"></i>
+        </div>
+        <div class="fk-hud-tooltip fk-tooltip-above">
+          <strong class="fk-hud-title">Paper Patterns</strong>
+        </div>
+      </a>
+      
+    </div>
+
+
+  <!-- ==========================================
+     CENTRAL FORSKO GLOWING CORE (Dual Logo Hover)
+     ========================================== -->
+<div class="fk-nucleus" id="fkCore" aria-label="Forsko Platform Core">
+  <div class="fk-nucleus-energy-pulse"></div>
+  <div class="fk-nucleus-plasma-aura"></div>
+  <div class="fk-nucleus-outer-rotor"></div>
+  <div class="fk-nucleus-inner-shield"></div>
+
+  <!-- Core Glowing Pedestal (Locked Circle Boundary) -->
+  <div class="fk-nucleus-pedestal">
+    <div class="fk-pedestal-specular"></div>
+    
+    <!-- Primary Logo (Default State) -->
+    <img src="forsko-logo.png" alt="Forsko Core Logo" class="fk-nucleus-emblem fk-emblem-primary" onerror="this.src='FORSKO2.png'">
+    
+    <!-- Secondary Logo (Revealed on Hover inside the exact same circle) -->
+    <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fk-nucleus-emblem fk-emblem-secondary">
   </div>
+</div>
+
+  </div>
+</div>
 </section>
 
 
