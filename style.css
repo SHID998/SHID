@@ -3275,3 +3275,616 @@ mark.search-highlight {
 /* ==========================================================================
    End of Forsko Stylesheet
    ========================================================================== */
+
+
+   /* ==========================================================================
+   FORSKO KNOWLEDGE UNIVERSE - COMPLETE MASTER STYLESHEET
+   Features: Dual-Logo Circle Crossfade, Precision 6-Color Orbits, Anti-Buffer
+   Theme: Dark Navy (#0B1120) | Sky Blue (#3B82F6) | Cyan (#00F2FE)
+   ========================================================================== */
+
+/* Main Canvas Stage */
+.fk-universe-stage {
+  position: relative;
+  width: 580px;
+  height: 580px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  perspective: 1200px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 1. Deep Space Atmospheric Glow */
+.fk-stage-backdrop {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(56, 189, 248, 0.22) 0%,
+    rgba(30, 41, 59, 0.1) 45%,
+    transparent 72%
+  );
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fk-cosmic-grid {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+}
+
+.fk-starfield {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fk-spec {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.35;
+  animation: fkStarBreathe 3.5s ease-in-out infinite alternate;
+}
+
+.fk-spec-1 { top: 16%; left: 24%; width: 2px; height: 2px; box-shadow: 0 0 7px #38bdf8; animation-delay: 0.2s; }
+.fk-spec-2 { top: 20%; right: 18%; width: 3px; height: 3px; box-shadow: 0 0 8px #818cf8; animation-delay: 1.2s; }
+.fk-spec-3 { bottom: 22%; left: 18%; width: 2.5px; height: 2.5px; box-shadow: 0 0 6px #34d399; animation-delay: 0.8s; }
+.fk-spec-4 { bottom: 24%; right: 24%; width: 2px; height: 2px; box-shadow: 0 0 6px #fbbf24; animation-delay: 2.1s; }
+.fk-spec-5 { top: 52%; left: 6%; width: 2px; height: 2px; box-shadow: 0 0 5px #f43f5e; animation-delay: 1.6s; }
+.fk-spec-6 { top: 76%; right: 10%; width: 2.5px; height: 2.5px; box-shadow: 0 0 7px #a855f7; animation-delay: 0.5s; }
+
+@keyframes fkStarBreathe {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 0.95; transform: scale(1.4); }
+}
+
+/* 2. SVG Tracks (R1: 120px, R2: 185px, R3: 250px) */
+.fk-svg-radar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fk-radar-ring {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke 0.4s ease;
+}
+
+.fk-ring-1 {
+  stroke: rgba(56, 189, 248, 0.42);
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 6;
+}
+
+.fk-ring-2 {
+  stroke: rgba(99, 102, 241, 0.35);
+  stroke-width: 1.5px;
+  stroke-dasharray: 6 9;
+}
+
+.fk-ring-3 {
+  stroke: rgba(168, 85, 247, 0.32);
+  stroke-width: 1.5px;
+  stroke-dasharray: 8 12;
+}
+
+.fk-radar-crosshairs line {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1.5px;
+}
+
+/* ==========================================================================
+   3. CENTRAL GLOWING FORSKO CORE (Dual Logo Hover Crossfade inside Circle)
+   ========================================================================== */
+.fk-nucleus {
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  pointer-events: auto;
+}
+
+/* Cybernetic Plasma Radial Background Glow */
+.fk-nucleus-plasma-aura {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, 
+    rgba(56, 189, 248, 0.75) 0%, 
+    rgba(37, 99, 235, 0.45) 45%, 
+    transparent 72%
+  );
+  filter: blur(18px);
+  animation: fkPlasmaBreathe 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes fkPlasmaBreathe {
+  0% { transform: scale(0.9); opacity: 0.65; }
+  100% { transform: scale(1.22); opacity: 1; }
+}
+
+/* Circle Pedestal with STRICT OVERFLOW HIDDEN (Image can never spill out) */
+.fk-nucleus-pedestal {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  overflow: hidden; /* STRICT CIRCLE BOUNDARY */
+  background: radial-gradient(circle at 35% 30%, #1e293b 0%, #080d16 85%);
+  border: 2px solid rgba(56, 189, 248, 0.75);
+  box-shadow: 
+    0 0 35px rgba(56, 189, 248, 0.55),
+    0 16px 36px -8px rgba(0, 0, 0, 0.85),
+    inset 0 0 25px rgba(56, 189, 248, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+.fk-nucleus:hover .fk-nucleus-pedestal {
+  transform: scale(1.06);
+  border-color: #38bdf8;
+  box-shadow: 
+    0 0 55px rgba(56, 189, 248, 0.9),
+    0 20px 45px -8px rgba(0, 0, 0, 0.9),
+    inset 0 0 35px rgba(56, 189, 248, 0.65);
+}
+
+/* Base Logo Setup */
+.fk-nucleus-emblem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 78%;
+  height: 78%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s ease;
+  z-index: 2;
+}
+
+/* Primary Logo (Default State) */
+.fk-emblem-primary {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.95));
+}
+
+/* Secondary Logo FORSKO2.png (Hover State) */
+.fk-emblem-secondary {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.95));
+}
+
+/* Hover Action: Perfect Crossfade */
+.fk-nucleus-pedestal:hover .fk-emblem-primary {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.fk-nucleus-pedestal:hover .fk-emblem-secondary {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.fk-pedestal-specular {
+  position: absolute;
+  top: 4px;
+  left: 16px;
+  right: 16px;
+  height: 38px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, transparent 100%);
+  border-radius: 50% 50% 30% 30%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fk-nucleus-energy-pulse {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  pointer-events: none;
+  animation: fkNucleusPulse 3.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.fk-nucleus-outer-rotor {
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  border: 1px dashed rgba(99, 102, 241, 0.4);
+  pointer-events: none;
+  animation: fkRotorReverse 28s linear infinite;
+}
+
+.fk-nucleus-inner-shield {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+@keyframes fkNucleusPulse {
+  0% { transform: scale(0.92); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes fkRotorReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* ==========================================================================
+   4. ORBIT TIERS (Dynamic Continuous Speed Kinematics)
+   ========================================================================== */
+.fk-orbit-tier {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Tier 1 (R = 120px -> D = 240px) | Speed: 18s */
+.fk-tier-1 {
+  width: 240px;
+  height: 240px;
+  margin-top: -120px;
+  margin-left: -120px;
+  animation: fkOrbitTrack1 18s linear infinite;
+}
+
+/* Tier 2 (R = 185px -> D = 370px) | Speed: 26s */
+.fk-tier-2 {
+  width: 370px;
+  height: 370px;
+  margin-top: -185px;
+  margin-left: -185px;
+  animation: fkOrbitTrack2 26s linear infinite;
+}
+
+/* Tier 3 (R = 250px -> D = 500px) | Speed: 34s */
+.fk-tier-3 {
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+  animation: fkOrbitTrack3 34s linear infinite;
+}
+
+
+
+@keyframes fkOrbitTrack1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fkOrbitTrack2 {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes fkOrbitTrack3 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   5. BUFFER-FREE RESOURCE NODES (Centered Exact Track Placement)
+   ========================================================================== */
+.fk-node-carrier {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  margin-top: -27px;
+  margin-left: -27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* Synchronized Counter-Rotations keep icons vertical */
+.fk-tier-1 .fk-node-carrier {
+  animation: fkCounterTier1 18s linear infinite;
+}
+.fk-tier-2 .fk-node-carrier {
+  animation: fkCounterTier2 26s linear infinite;
+}
+.fk-tier-3 .fk-node-carrier {
+  animation: fkCounterTier3 34s linear infinite;
+}
+
+@keyframes fkCounterTier1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes fkCounterTier2 {
+  from { transform: rotate(-360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes fkCounterTier3 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   EXACT 100% TRACK INTERSECTION POSITIONS (Radius Lock)
+   -------------------------------------------------------------------------- */
+/* Tier 1: R = 120px */
+.fk-pos-1-top    { top: 0%; left: 50%; }
+.fk-pos-1-bottom { top: 100%; left: 50%; }
+
+/* Tier 2: R = 185px */
+.fk-pos-2-left   { top: 50%; left: 0%; }
+.fk-pos-2-right  { top: 50%; left: 100%; }
+
+/* Tier 3: R = 250px (Angles: 50% ± 35.35%) */
+.fk-pos-3-bl     { top: 85.35%; left: 14.65%; }
+.fk-pos-3-tr     { top: 14.65%; left: 85.35%; }
+
+/* 52px Glowing Capsule */
+.fk-node-capsule {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0b1120;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  transition: transform 0.25s ease-out,
+              box-shadow 0.25s ease-out,
+              border-color 0.25s ease-out;
+  pointer-events: none; /* Stops mouse jitter/buffering completely */
+}
+
+.fk-ico {
+  font-size: 1.35rem;
+  transition: transform 0.25s ease-out;
+}
+
+/* ----------------------------------------------------
+   INDIVIDUAL GLOW THEMES (All 6 Distinct Colors)
+   ---------------------------------------------------- */
+/* 1. Syllabus: Electric Cyan (#00F2FE) */
+.fk-theme-cyan {
+  color: #00f2fe;
+  border-color: rgba(0, 242, 254, 0.6);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-cyan {
+  border-color: #00f2fe;
+  box-shadow: 0 0 35px rgba(0, 242, 254, 0.95), 0 0 50px rgba(0, 242, 254, 0.5);
+}
+
+/* 2. Notes: Emerald Mint (#10B981) */
+.fk-theme-mint {
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-mint {
+  border-color: #34d399;
+  box-shadow: 0 0 35px rgba(52, 211, 153, 0.95), 0 0 50px rgba(52, 211, 153, 0.5);
+}
+
+/* 3. PYQs: Solar Amber (#F59E0B) */
+.fk-theme-amber {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-amber {
+  border-color: #fbbf24;
+  box-shadow: 0 0 35px rgba(251, 191, 36, 0.95), 0 0 50px rgba(251, 191, 36, 0.5);
+}
+
+/* 4. Question Bank: Electric Cobalt (#3B82F6) */
+.fk-theme-cobalt {
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-cobalt {
+  border-color: #60a5fa;
+  box-shadow: 0 0 35px rgba(96, 165, 250, 0.95), 0 0 50px rgba(96, 165, 250, 0.5);
+}
+
+/* 5. Practicals: Ultraviolet Orchid (#A855F7) */
+.fk-theme-orchid {
+  color: #c084fc;
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-orchid {
+  border-color: #c084fc;
+  box-shadow: 0 0 35px rgba(192, 132, 252, 0.95), 0 0 50px rgba(192, 132, 252, 0.5);
+}
+
+/* 6. Paper Patterns: Hyper Rose (#F43F5E) */
+.fk-theme-rose {
+  color: #fb7185;
+  border-color: rgba(251, 113, 133, 0.6);
+  box-shadow: 0 0 20px rgba(251, 113, 133, 0.45), 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.fk-node-carrier:hover .fk-theme-rose {
+  border-color: #fb7185;
+  box-shadow: 0 0 35px rgba(251, 113, 133, 0.95), 0 0 50px rgba(251, 113, 133, 0.5);
+}
+
+/* Hover Scale & Freeze Dynamics (Buffer-Free) */
+.fk-node-carrier:hover .fk-node-capsule {
+  transform: scale(1.2);
+}
+
+.fk-node-carrier:hover .fk-ico {
+  transform: scale(1.08);
+}
+
+.fk-orbit-tier:hover {
+  animation-play-state: paused;
+}
+
+.fk-orbit-tier:hover .fk-node-carrier {
+  animation-play-state: paused;
+}
+
+.fk-universe-stage:hover .fk-node-carrier:not(:hover) {
+  opacity: 0.42;
+}
+
+/* ==========================================================================
+   6. STABLE HUD TOOLTIPS
+   ========================================================================== */
+.fk-hud-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.92);
+  background: rgba(11, 17, 32, 0.97);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 16px rgba(56, 189, 248, 0.28);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 100;
+}
+
+.fk-tooltip-below {
+  top: calc(100% + 10px);
+}
+
+.fk-tooltip-above {
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(-8px) scale(0.92);
+}
+
+.fk-hud-code {
+  font-family: 'Consolas', 'Fira Code', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.8px;
+  color: #64748b;
+}
+
+.fk-hud-title {
+  font-family: 'Exo 2', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.fk-hud-sub {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.66rem;
+  color: #94a3b8;
+}
+
+.fk-node-carrier:hover .fk-hud-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .fk-universe-stage {
+    width: 440px;
+    height: 440px;
+  }
+
+  .fk-nucleus { width: 140px; height: 140px; }
+  .fk-nucleus-pedestal { width: 120px; height: 120px; padding: 12px; }
+  .fk-nucleus-plasma-aura { width: 135px; height: 135px; }
+
+  /* 440px Scaled Tiers (R1: 90, R2: 140, R3: 190) */
+  .fk-tier-1 { width: 180px; height: 180px; margin-top: -90px; margin-left: -90px; }
+  .fk-tier-2 { width: 280px; height: 280px; margin-top: -140px; margin-left: -140px; }
+  .fk-tier-3 { width: 380px; height: 380px; margin-top: -190px; margin-left: -190px; }
+
+  .fk-node-carrier { width: 46px; height: 46px; margin-top: -23px; margin-left: -23px; }
+  .fk-node-capsule { width: 46px; height: 46px; }
+  .fk-ico { font-size: 1.15rem; }
+}
+
+@media (max-width: 480px) {
+  .fk-universe-stage {
+    width: 330px;
+    height: 330px;
+  }
+
+  .fk-nucleus { width: 110px; height: 110px; }
+  .fk-nucleus-pedestal { width: 92px; height: 92px; padding: 8px; }
+  .fk-nucleus-plasma-aura { width: 105px; height: 105px; }
+
+  /* 330px Scaled Tiers (R1: 68, R2: 105, R3: 142) */
+  .fk-tier-1 { width: 136px; height: 136px; margin-top: -68px; margin-left: -68px; }
+  .fk-tier-2 { width: 210px; height: 210px; margin-top: -105px; margin-left: -105px; }
+  .fk-tier-3 { width: 284px; height: 284px; margin-top: -142px; margin-left: -142px; }
+
+  .fk-node-carrier { width: 38px; height: 38px; margin-top: -19px; margin-left: -19px; }
+  .fk-node-capsule { width: 38px; height: 38px; }
+  .fk-ico { font-size: 0.95rem; }
+
+  .fk-hud-tooltip { padding: 4px 8px; }
+  .fk-hud-title { font-size: 0.76rem; }
+  .fk-hud-sub, .fk-hud-code { display: none; }
+}
