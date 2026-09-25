@@ -33,6 +33,92 @@ document.addEventListener('DOMContentLoaded', () => {
   const rippleTriggers = document.querySelectorAll('.ripple-trigger');
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
+    /* --------------------------------------------------------------------------
+     🎲 FORSKO TEAM CARD WEIGHTED SHUFFLE
+     After first member is selected, the remaining 3 cards are shuffled
+     normally into positions 2, 3 and 4.
+     -------------------------------------------------------------------------- */
+
+  const teamGrid = document.querySelector('.team-grid-saas');
+
+  if (teamGrid) {
+
+    const cards = Array.from(
+      teamGrid.querySelectorAll('.team-card-saas')
+    );
+
+    if (cards.length > 1) {
+
+      // Find member cards using their name
+      const getMemberName = (card) => {
+        const nameElement = card.querySelector('h3, h2, .team-name');
+        return nameElement
+          ? nameElement.textContent.trim()
+          : '';
+      };
+
+      // Find Abdul Shahid's card
+      const abdulCard = cards.find(card =>
+        getMemberName(card).includes('Abdul Shahid Abdul Shakil')
+      );
+
+      // Remaining cards
+      const otherCards = cards.filter(card => card !== abdulCard);
+
+      let firstCard;
+
+      // Weighted first-position selection
+      const random = Math.random();
+
+      if (random < 0.40 && abdulCard) {
+
+        // 40% → Abdul Shahid
+        firstCard = abdulCard;
+
+      } else {
+
+        // 60% → one of the other 3 members
+        const randomIndex = Math.floor(
+          Math.random() * otherCards.length
+        );
+
+        firstCard = otherCards[randomIndex];
+      }
+
+      // Remaining cards
+      const remainingCards = cards.filter(
+        card => card !== firstCard
+      );
+
+      // Fisher-Yates shuffle for positions 2, 3, 4
+      for (let i = remainingCards.length - 1; i > 0; i--) {
+
+        const randomIndex = Math.floor(
+          Math.random() * (i + 1)
+        );
+
+        [
+          remainingCards[i],
+          remainingCards[randomIndex]
+        ] = [
+          remainingCards[randomIndex],
+          remainingCards[i]
+        ];
+      }
+
+      // Final order
+      const shuffledOrder = [
+        firstCard,
+        ...remainingCards
+      ];
+
+      // Apply new order
+      shuffledOrder.forEach(card => {
+        teamGrid.appendChild(card);
+      });
+    }
+  }
+
   /* --------------------------------------------------------------------------
      1. Sticky Navbar & Mobile Navigation
      -------------------------------------------------------------------------- */
@@ -405,3 +491,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+const teamCards = document.querySelectorAll('.team-card-saas, [data-tilt]');
