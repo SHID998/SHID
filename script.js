@@ -553,3 +553,134 @@ document.addEventListener('DOMContentLoaded', () => {
 // Call initializer
 document.addEventListener('DOMContentLoaded', initCounterStats);
 
+
+
+/* ==========================================================================
+   FORSKO KNOWLEDGE UNIVERSE - High-Performance Controller
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  function initForskoUniverse() {
+    const stage = document.getElementById('fkKnowledgeUniverse');
+    if (!stage) return;
+
+    const nucleus = stage.querySelector('#fkCore');
+    const nodes = stage.querySelectorAll('.fk-node-carrier');
+    const tiers = stage.querySelectorAll('.fk-orbit-tier');
+
+    // Accessibility: Reduced Motion Check
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function checkReducedMotion() {
+      if (motionQuery.matches) {
+        tiers.forEach(t => (t.style.animation = 'none'));
+        nodes.forEach(n => (n.style.animation = 'none'));
+      }
+    }
+    checkReducedMotion();
+    if (typeof motionQuery.addEventListener === 'function') {
+      motionQuery.addEventListener('change', checkReducedMotion);
+    }
+
+    // High Performance Smooth Mouse Parallax (rAF)
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    let isHovered = false;
+    let rafId = null;
+
+    function lerp(start, end, factor) {
+      return start + (end - start) * factor;
+    }
+
+    function updateParallax() {
+      if (motionQuery.matches) return;
+
+      currentX = lerp(currentX, mouseX, 0.08);
+      currentY = lerp(currentY, mouseY, 0.08);
+
+      stage.style.transform = `perspective(1200px) rotateX(${-currentY * 6}deg) rotateY(${currentX * 6}deg)`;
+
+      if (nucleus) {
+        nucleus.style.transform = `translate3d(${-currentX * 12}px, ${-currentY * 12}px, 20px)`;
+      }
+
+      if (isHovered || Math.abs(currentX) > 0.001 || Math.abs(currentY) > 0.001) {
+        rafId = requestAnimationFrame(updateParallax);
+      } else {
+        stage.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+        if (nucleus) nucleus.style.transform = 'translate3d(0, 0, 0)';
+        rafId = null;
+      }
+    }
+
+    function onPointerMove(e) {
+      const rect = stage.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      mouseX = Math.max(-1, Math.min(1, (e.clientX - cx) / (rect.width / 2)));
+      mouseY = Math.max(-1, Math.min(1, (e.clientY - cy) / (rect.height / 2)));
+
+      if (!rafId) rafId = requestAnimationFrame(updateParallax);
+    }
+
+    stage.addEventListener('mouseenter', () => {
+      isHovered = true;
+      if (!rafId) rafId = requestAnimationFrame(updateParallax);
+    });
+
+    stage.addEventListener('mousemove', onPointerMove, { passive: true });
+
+    stage.addEventListener('mouseleave', () => {
+      isHovered = false;
+      mouseX = 0;
+      mouseY = 0;
+    });
+
+    // Touch Support for Mobile
+    let activeNode = null;
+
+    nodes.forEach(node => {
+      node.addEventListener('touchend', (e) => {
+        if (activeNode !== node) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (activeNode) {
+            const oldTooltip = activeNode.querySelector('.fk-hud-tooltip');
+            if (oldTooltip) {
+              oldTooltip.style.visibility = 'hidden';
+              oldTooltip.style.opacity = '0';
+            }
+          }
+
+          activeNode = node;
+          const tooltip = node.querySelector('.fk-hud-tooltip');
+          if (tooltip) {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+          }
+        }
+      });
+    });
+
+    document.addEventListener('touchstart', (e) => {
+      if (activeNode && !stage.contains(e.target)) {
+        const tooltip = activeNode.querySelector('.fk-hud-tooltip');
+        if (tooltip) {
+          tooltip.style.visibility = 'hidden';
+          tooltip.style.opacity = '0';
+        }
+        activeNode = null;
+      }
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initForskoUniverse, { once: true });
+  } else {
+    initForskoUniverse();
+  }
+})();
