@@ -31,6 +31,69 @@
   </style>
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9110602385103104"
      crossorigin="anonymous"></script>
+
+<style id="forsko-hero-visual-switcher-css">
+/* =========================================================
+   FORSKO INDEX HERO — COMPLETE VISUAL SWITCHER
+   Only controls the Hero right-side visuals on index.html.
+   ========================================================= */
+
+#forskoHeroVisual {
+  position: relative;
+  min-height: 560px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#forskoHeroVisual > .fh-hero-visual,
+#forskoHeroVisual > .fk-hero-visual,
+#forskoHeroVisual > .fld-hero-visual {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#forskoHeroVisual .fh-hero-visual[aria-hidden="true"],
+#forskoHeroVisual .fk-hero-visual[aria-hidden="true"],
+#forskoHeroVisual .fld-hero-visual[aria-hidden="true"] {
+  display: none !important;
+}
+
+#forskoHeroVisual .fh-hero-visual[aria-hidden="false"],
+#forskoHeroVisual .fk-hero-visual[aria-hidden="false"],
+#forskoHeroVisual .fld-hero-visual[aria-hidden="false"] {
+  display: block !important;
+}
+
+#forskoHeroVisual .fk-hero-visual > .hero-illustration {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #forskoHeroVisual {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  #forskoHeroVisual {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #forskoHeroVisual * {
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -104,152 +167,324 @@
       </div>
     </div>
 
-    <!-- Hero Right: FORSKO KNOWLEDGE UNIVERSE (Buffer-Free & Precision Locked) -->
-<div class="hero-illustration">
-  <div class="fk-universe-stage" id="fkKnowledgeUniverse" role="region" aria-label="Forsko Orbital Knowledge Network">
 
-    <!-- Atmospheric Deep Glow & Cosmic Grid -->
-    <div class="fk-stage-backdrop" aria-hidden="true"></div>
-    <div class="fk-cosmic-grid" aria-hidden="true"></div>
-    <div class="fk-starfield" aria-hidden="true">
-      <span class="fk-spec fk-spec-1"></span>
-      <span class="fk-spec fk-spec-2"></span>
-      <span class="fk-spec fk-spec-3"></span>
-      <span class="fk-spec fk-spec-4"></span>
-      <span class="fk-spec fk-spec-5"></span>
-      <span class="fk-spec fk-spec-6"></span>
+
+   <!-- Hero Right: Dynamic FORSKO Visual System -->
+    <div class="hero-illustration" id="forskoHeroVisual">
+
+      <!-- 1. FORSKO HOLOGRAPHIC RESOURCE TILES -->
+      <div class="fh-hero-visual" id="fhHeroVisual" aria-hidden="false">
+        <div class="fh-hologram-stage" id="fhHologramStage" role="region" aria-label="Forsko Holographic Resource Network">
+          <div class="fh-ambient-cone" aria-hidden="true"></div>
+          <div class="fh-vertical-laser" aria-hidden="true"></div>
+          <div class="fh-stream-ray fh-ray-left" aria-hidden="true"></div>
+          <div class="fh-stream-ray fh-ray-right" aria-hidden="true"></div>
+
+          <div class="fh-tiles-cluster" id="fhTilesCluster">
+            <a href="syllabus.html" class="fh-holo-tile fh-pos-syllabus" aria-label="Syllabus">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-book-bookmark"></i></div>
+                <div class="fh-tile-label">Syllabus</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+
+            <a href="notes.html" class="fh-holo-tile fh-pos-notes" aria-label="Notes">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="fh-tile-label">Notes</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+
+            <a href="pyqs.html" class="fh-holo-tile fh-pos-pyqs" aria-label="PYQs">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div class="fh-tile-label">PYQs</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+
+            <a href="question-bank.html" class="fh-holo-tile fh-pos-qb" aria-label="Question Bank">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-database"></i></div>
+                <div class="fh-tile-label">Question Bank</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+
+            <a href="practical.html" class="fh-holo-tile fh-pos-practicals" aria-label="Practicals">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="fh-tile-label">Practicals</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+
+            <a href="paper-patterns.html" class="fh-holo-tile fh-pos-patterns" aria-label="Paper Patterns">
+              <div class="fh-card-face">
+                <div class="fh-glass-bevel"></div>
+                <div class="fh-glass-specular"></div>
+                <div class="fh-card-scanline"></div>
+                <div class="fh-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                <div class="fh-tile-label">Paper Patterns</div>
+                <div class="fh-tile-beam"></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="fh-holo-logo-core" id="fhHoloLogoCore" aria-label="Forsko Core">
+            <div class="fh-core-glow-aura"></div>
+            <div class="fh-core-orbit-ring"></div>
+            <div class="fh-core-laser-column"></div>
+            <div class="fh-core-badge-disc">
+              <img src="forsko-logo.png" alt="Forsko" class="fh-core-img fh-core-primary" onerror="this.src='FORSKO2.png'">
+              <img src="FORSKO2.png" alt="Forsko" class="fh-core-img fh-core-hover">
+            </div>
+          </div>
+
+          <div class="fh-pedestal-platform" aria-hidden="true">
+            <div class="fh-pedestal-rim fh-rim-3"></div>
+            <div class="fh-pedestal-rim fh-rim-2"></div>
+            <div class="fh-pedestal-rim fh-rim-1"></div>
+            <div class="fh-pedestal-emitter">
+              <div class="fh-emitter-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. FORSKO KNOWLEDGE UNIVERSE -->
+      <div class="fk-hero-visual" id="fkHeroVisual" aria-hidden="true" style="display:none;">
+        <div class="fk-universe-stage" id="fkKnowledgeUniverse" role="region" aria-label="Forsko Orbital Knowledge Network">
+          <div class="fk-stage-backdrop" aria-hidden="true"></div>
+          <div class="fk-cosmic-grid" aria-hidden="true"></div>
+          <div class="fk-starfield" aria-hidden="true">
+            <span class="fk-spec fk-spec-1"></span>
+            <span class="fk-spec fk-spec-2"></span>
+            <span class="fk-spec fk-spec-3"></span>
+            <span class="fk-spec fk-spec-4"></span>
+            <span class="fk-spec fk-spec-5"></span>
+            <span class="fk-spec fk-spec-6"></span>
+          </div>
+
+          <svg class="fk-svg-radar" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="fkCosmicCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+                <stop offset="60%" stop-color="#1e293b" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="290" cy="290" r="260" fill="url(#fkCosmicCoreGlow)" />
+            <circle class="fk-radar-ring fk-ring-1" cx="290" cy="290" r="120" />
+            <circle class="fk-radar-ring fk-ring-2" cx="290" cy="290" r="185" />
+            <circle class="fk-radar-ring fk-ring-3" cx="290" cy="290" r="250" />
+            <g class="fk-radar-crosshairs">
+              <line x1="290" y1="30" x2="290" y2="40" />
+              <line x1="290" y1="540" x2="290" y2="550" />
+              <line x1="30" y1="290" x2="40" y2="290" />
+              <line x1="540" y1="290" x2="550" y2="290" />
+            </g>
+          </svg>
+
+          <!-- Orbit 1 -->
+          <div class="fk-orbit-tier fk-tier-1" data-orbit="1">
+            <a href="syllabus.html" class="fk-node-carrier fk-pos-1-top" data-resource="syllabus">
+              <div class="fk-node-capsule fk-theme-cyan"><i class="fa-solid fa-book-bookmark fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Syllabus</strong></div>
+            </a>
+            <a href="notes.html" class="fk-node-carrier fk-pos-1-bottom" data-resource="notes">
+              <div class="fk-node-capsule fk-theme-mint"><i class="fa-solid fa-file-lines fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Notes</strong></div>
+            </a>
+          </div>
+
+          <!-- Orbit 2 -->
+          <div class="fk-orbit-tier fk-tier-2" data-orbit="2">
+            <a href="pyqs.html" class="fk-node-carrier fk-pos-2-left" data-resource="pyqs">
+              <div class="fk-node-capsule fk-theme-amber"><i class="fa-solid fa-clock-rotate-left fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">PYQs</strong></div>
+            </a>
+            <a href="question-bank.html" class="fk-node-carrier fk-pos-2-right" data-resource="qb">
+              <div class="fk-node-capsule fk-theme-cobalt"><i class="fa-solid fa-database fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Question Banks</strong></div>
+            </a>
+          </div>
+
+          <!-- Orbit 3 -->
+          <div class="fk-orbit-tier fk-tier-3" data-orbit="3">
+            <a href="practical.html" class="fk-node-carrier fk-pos-3-bl" data-resource="practicals">
+              <div class="fk-node-capsule fk-theme-orchid"><i class="fa-solid fa-laptop-code fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Practicals</strong></div>
+            </a>
+            <a href="paper-patterns.html" class="fk-node-carrier fk-pos-3-tr" data-resource="patterns">
+              <div class="fk-node-capsule fk-theme-rose"><i class="fa-solid fa-chart-pie fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Paper Patterns</strong></div>
+            </a>
+          </div>
+
+          <!-- Central Core -->
+          <div class="fk-nucleus" id="fkCore" aria-label="Forsko Platform Core">
+            <div class="fk-nucleus-energy-pulse"></div>
+            <div class="fk-nucleus-plasma-aura"></div>
+            <div class="fk-nucleus-outer-rotor"></div>
+            <div class="fk-nucleus-inner-shield"></div>
+            <div class="fk-nucleus-pedestal">
+              <div class="fk-pedestal-specular"></div>
+              <img src="forsko-logo.png" alt="Forsko Core Logo" class="fk-nucleus-emblem fk-emblem-primary" onerror="this.src='FORSKO2.png'">
+              <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fk-nucleus-emblem fk-emblem-secondary">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. FORSKO LEARNING DNA -->
+      <div class="fld-hero-visual" id="fldHeroVisualMode" aria-hidden="true" style="display:none;">
+        <div class="fld-hero-scope" id="fldHeroScope" role="region" aria-label="Forsko Learning DNA Academic Ecosystem">
+          <div class="fld-dna-stage" id="fldDnaStage">
+            <div class="fld-dna-atmosphere" aria-hidden="true">
+              <div class="fld-ambient-glow"></div>
+              <div class="fld-vertical-axis"></div>
+              <div class="fld-projection-beam"></div>
+            </div>
+
+            <div class="fld-dna-particles" aria-hidden="true">
+              <span class="fld-particle fld-p-1"></span>
+              <span class="fld-particle fld-p-2"></span>
+              <span class="fld-particle fld-p-3"></span>
+              <span class="fld-particle fld-p-4"></span>
+              <span class="fld-particle fld-p-5"></span>
+              <span class="fld-particle fld-p-6"></span>
+            </div>
+
+            <div class="fld-dna-rings" aria-hidden="true">
+              <div class="fld-terminal-ring fld-ring-top"></div>
+              <div class="fld-terminal-ring fld-ring-bottom"></div>
+            </div>
+
+            <div class="fld-dna-helix">
+              <svg class="fld-dna-svg" viewBox="0 0 540 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="fldStrandGradA" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+                    <stop offset="50%" stop-color="#2563EB" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.9" />
+                  </linearGradient>
+                  <linearGradient id="fldStrandGradB" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.9" />
+                    <stop offset="50%" stop-color="#818CF8" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.9" />
+                  </linearGradient>
+                </defs>
+                <g class="fld-dna-connectors">
+                  <line class="fld-rung fld-rung-1" x1="140" y1="100" x2="400" y2="100" />
+                  <line class="fld-rung fld-rung-2" x1="165" y1="200" x2="375" y2="200" />
+                  <line class="fld-rung fld-rung-core" x1="180" y1="300" x2="360" y2="300" />
+                  <line class="fld-rung fld-rung-4" x1="160" y1="400" x2="380" y2="400" />
+                  <line class="fld-rung fld-rung-5" x1="135" y1="500" x2="405" y2="500" />
+                </g>
+                <path class="fld-dna-strand fld-strand-a" 
+                      d="M 270,30 C 100,80 100,160 270,210 C 440,260 440,340 270,390 C 100,440 100,520 270,570" />
+                <path class="fld-dna-strand fld-strand-b" 
+                      d="M 270,30 C 440,80 440,160 270,210 C 100,260 100,340 270,390 C 440,440 440,520 270,570" />
+                <g class="fld-synaptic-pulses">
+                  <circle class="fld-pulse-dot fld-pulse-1" cx="270" cy="100" r="3" />
+                  <circle class="fld-pulse-dot fld-pulse-2" cx="270" cy="200" r="3" />
+                  <circle class="fld-pulse-dot fld-pulse-3" cx="270" cy="400" r="3" />
+                  <circle class="fld-pulse-dot fld-pulse-4" cx="270" cy="500" r="3" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- 5. Central FORSKO Identity Nucleus (Only Logos) -->
+      <div class="fld-dna-core" id="fldDnaCore" role="region" aria-label="Forsko Core Nucleus">
+        <div class="fld-core-wave fld-core-wave-1" aria-hidden="true"></div>
+        <div class="fld-core-wave fld-core-wave-2" aria-hidden="true"></div>
+        <div class="fld-core-rotor" aria-hidden="true"></div>
+
+        <div class="fld-core-capsule">
+          <div class="fld-core-glare" aria-hidden="true"></div>
+          <div class="fld-core-emblem-wrap">
+            <img src="forsko-logo.png" alt="Forsko Logo" class="fld-core-logo fld-logo-primary" onerror="this.src='FORSKO2.png'">
+            <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fld-core-logo fld-logo-secondary">
+          </div>
+        </div>
+      </div>
+
+            <!-- Six Nodes -->
+            <div class="fld-nodes-layer" id="fldNodesLayer">
+              <a href="syllabus.html" class="fld-node fld-node-syllabus" data-resource="syllabus" aria-label="Explore Syllabus">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-book-bookmark fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">SYLLABUS</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+              <a href="notes.html" class="fld-node fld-node-notes" data-resource="notes" aria-label="Access Study Notes">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-file-lines fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">NOTES</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+              <a href="pyqs.html" class="fld-node fld-node-pyqs" data-resource="pyqs" aria-label="Browse Previous Year Questions">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-clock-rotate-left fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">PYQs</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+              <a href="question-bank.html" class="fld-node fld-node-qb" data-resource="question-bank" aria-label="Open Question Bank">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-database fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">QUESTION BANK</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+              <a href="practical.html" class="fld-node fld-node-practicals" data-resource="practicals" aria-label="View Lab Practicals">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-laptop-code fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">PRACTICALS</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+              <a href="paper-patterns.html" class="fld-node fld-node-patterns" data-resource="paper-patterns" aria-label="Check Paper Patterns">
+                <div class="fld-node-anchor-pin" aria-hidden="true"></div>
+                <div class="fld-node-capsule">
+                  <div class="fld-node-specular" aria-hidden="true"></div>
+                  <div class="fld-node-icon-box"><i class="fa-solid fa-chart-pie fld-node-icon"></i></div>
+                  <div class="fld-node-text-wrap"><strong class="fld-node-title">PAPER PATTERNS</strong><span class="fld-node-desc"></span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Central Precision SVG Orbit Canvas -->
-    <svg class="fk-svg-radar" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <radialGradient id="fkCosmicCoreGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
-          <stop offset="60%" stop-color="#1e293b" stop-opacity="0.08" />
-          <stop offset="100%" stop-color="transparent" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-
-      <!-- Center Ambient Glow -->
-      <circle cx="290" cy="290" r="260" fill="url(#fkCosmicCoreGlow)" />
-
-      <!-- Concentric Orbital Tracks (R1: 120px, R2: 185px, R3: 250px) -->
-      <circle class="fk-radar-ring fk-ring-1" cx="290" cy="290" r="120" />
-      <circle class="fk-radar-ring fk-ring-2" cx="290" cy="290" r="185" />
-      <circle class="fk-radar-ring fk-ring-3" cx="290" cy="290" r="250" />
-
-      <!-- Orbital Target Markers -->
-      <g class="fk-radar-crosshairs">
-        <line x1="290" y1="30" x2="290" y2="40" />
-        <line x1="290" y1="540" x2="290" y2="550" />
-        <line x1="30" y1="290" x2="40" y2="290" />
-        <line x1="540" y1="290" x2="550" y2="290" />
-      </g>
-    </svg>
-
-    <!-- ==========================================
-         ORBIT 1: INNER RING (Radius 120px)
-         Syllabus & Notes
-         ========================================== -->
-    <div class="fk-orbit-tier fk-tier-1" data-orbit="1">
-      <!-- Node 1: Syllabus (Top - Electric Cyan) -->
-      <a href="syllabus.html" class="fk-node-carrier fk-pos-1-top" data-resource="syllabus">
-        <div class="fk-node-capsule fk-theme-cyan">
-          <i class="fa-solid fa-book-bookmark fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-above">
-          <strong class="fk-hud-title">Syllabus</strong>
-        </div>
-      </a>
-
-      <!-- Node 2: Notes (Bottom - Emerald Mint) -->
-      <a href="notes.html" class="fk-node-carrier fk-pos-1-bottom" data-resource="notes">
-        <div class="fk-node-capsule fk-theme-mint">
-          <i class="fa-solid fa-file-lines fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-below">
-          <strong class="fk-hud-title">Notes</strong>
-        </div>
-      </a>
-    </div>
-
-    <!-- ==========================================
-         ORBIT 2: MIDDLE RING (Radius 185px)
-         PYQs & Question Bank
-         ========================================== -->
-    <div class="fk-orbit-tier fk-tier-2" data-orbit="2">
-      <!-- Node 3: PYQs (Left - Solar Amber) -->
-      <a href="pyqs.html" class="fk-node-carrier fk-pos-2-left" data-resource="pyqs">
-        <div class="fk-node-capsule fk-theme-amber">
-          <i class="fa-solid fa-clock-rotate-left fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-below">
-          <strong class="fk-hud-title">PYQs</strong>
-        </div>
-      </a>
-
-      <!-- Node 4: Question Bank (Right - Electric Cobalt) -->
-      <a href="question-bank.html" class="fk-node-carrier fk-pos-2-right" data-resource="qb">
-        <div class="fk-node-capsule fk-theme-cobalt">
-          <i class="fa-solid fa-database fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-below">
-          <strong class="fk-hud-title">Question Banks</strong>
-        </div>
-      </a>
-    </div>
-
-    <!-- ==========================================
-         ORBIT 3: OUTER RING (Radius 250px)
-         Practicals & Paper Patterns
-         ========================================== -->
-    <div class="fk-orbit-tier fk-tier-3" data-orbit="3">
-      <!-- Node 5: Practicals (Bottom-Left - Ultraviolet Orchid) -->
-      <a href="practical.html" class="fk-node-carrier fk-pos-3-bl" data-resource="practicals">
-        <div class="fk-node-capsule fk-theme-orchid">
-          <i class="fa-solid fa-laptop-code fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-above">
-          <strong class="fk-hud-title">Practicals</strong>
-        </div>
-      </a>
-
-      <!-- Node 6: Paper Patterns (Top-Right - Hyper Rose) -->
-      <a href="paper-patterns.html" class="fk-node-carrier fk-pos-3-tr" data-resource="patterns">
-        <div class="fk-node-capsule fk-theme-rose">
-          <i class="fa-solid fa-chart-pie fk-ico"></i>
-        </div>
-        <div class="fk-hud-tooltip fk-tooltip-above">
-          <strong class="fk-hud-title">Paper Patterns</strong>
-        </div>
-      </a>
-      
-    </div>
-
-
-  <!-- ==========================================
-     CENTRAL FORSKO GLOWING CORE (Dual Logo Hover)
-     ========================================== -->
-<div class="fk-nucleus" id="fkCore" aria-label="Forsko Platform Core">
-  <div class="fk-nucleus-energy-pulse"></div>
-  <div class="fk-nucleus-plasma-aura"></div>
-  <div class="fk-nucleus-outer-rotor"></div>
-  <div class="fk-nucleus-inner-shield"></div>
-
-  <!-- Core Glowing Pedestal (Locked Circle Boundary) -->
-  <div class="fk-nucleus-pedestal">
-    <div class="fk-pedestal-specular"></div>
-    
-    <!-- Primary Logo (Default State) -->
-    <img src="forsko-logo.png" alt="Forsko Core Logo" class="fk-nucleus-emblem fk-emblem-primary" onerror="this.src='FORSKO2.png'">
-    
-    <!-- Secondary Logo (Revealed on Hover inside the exact same circle) -->
-    <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fk-nucleus-emblem fk-emblem-secondary">
   </div>
-</div>
-
-  </div>
-</div>
+</section>
 </section>
 
 
@@ -3395,11 +3630,58 @@ if (searchBtn) {
   </div>
 </div>
 
+
+<script id="forsko-three-hero-visual-switcher">
+(function () {
+  function initForskoThreeVisuals() {
+    const root = document.getElementById('forskoHeroVisual');
+    if (!root) return;
+
+    // Use direct children only: Holographic, Knowledge Universe, Learning DNA.
+    const visuals = Array.from(root.children).filter(el =>
+      el.classList.contains('fh-hero-visual') ||
+      el.classList.contains('fk-hero-visual') ||
+      el.classList.contains('fld-hero-visual')
+    );
+
+    if (visuals.length < 3) return;
+
+    // Guaranteed 3-way rotation:
+    // Refresh 1 = Holographic
+    // Refresh 2 = Universe
+    // Refresh 3 = Learning DNA
+    // Refresh 4 = Holographic ... and so on.
+    const key = 'forskoHeroVisualRotation';
+    let previous = parseInt(sessionStorage.getItem(key), 10);
+
+    if (!Number.isInteger(previous) || previous < 0 || previous >= visuals.length) {
+      previous = -1;
+    }
+
+    const selectedIndex = (previous + 1) % visuals.length;
+    sessionStorage.setItem(key, String(selectedIndex));
+
+    visuals.forEach((visual, index) => {
+      const active = index === selectedIndex;
+      visual.setAttribute('aria-hidden', active ? 'false' : 'true');
+      visual.style.display = active ? 'block' : 'none';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initForskoThreeVisuals, { once: true });
+  } else {
+    initForskoThreeVisuals();
+  }
+})();
+</script>
+
   <!-- Unified Main JavaScript -->
   <script src="script.js"></script>
   <script src="command-palette.js"></script>
   <script src="exam-countdown.js"></script>
   <!-- Forsko Splash Screen Script -->
 <script src="splash-screen.js"></script>
+
 </body>
 </html>
