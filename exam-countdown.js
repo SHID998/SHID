@@ -9,7 +9,7 @@
 const COUNTDOWN_CONFIG = [
   {
     id: "1",
-    targetDate: new Date("November 02, 2026 10:00:00").getTime(),
+    targetDate: new Date("November 02, 2026 09:00:00").getTime(),
     daysId: "days-1",
     hoursId: "hours-1",
     minutesId: "minutes-1",
@@ -19,7 +19,7 @@ const COUNTDOWN_CONFIG = [
   },
   {
     id: "2",
-    targetDate: new Date("October 01, 2026 10:00:00").getTime(),
+    targetDate: new Date("October 01, 2026 09:00:00").getTime(),
     daysId: "days-2",
     hoursId: "hours-2",
     minutesId: "minutes-2",
@@ -29,7 +29,7 @@ const COUNTDOWN_CONFIG = [
   },
   {
     id: "3",
-    targetDate: new Date("December 21, 2026 10:00:00").getTime(),
+    targetDate: new Date("December 21, 2026 09:00:00").getTime(),
     daysId: "days-3",
     hoursId: "hours-3",
     minutesId: "minutes-3",
