@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fabSearch = document.getElementById("fabSearch");
     const fabBackToTop = document.getElementById("fabBackToTop");
     const fabFeedback = document.getElementById("fabFeedback");
+    
 
     const menuItems = document.querySelectorAll(".fab-menu-item");
 
@@ -1801,3 +1802,263 @@ function initRelativeTimeStamps() {
 
 // Page load hone par run karein
 document.addEventListener('DOMContentLoaded', initRelativeTimeStamps);
+
+
+
+
+
+
+
+// ==========================================================================
+// FORSKO SGBAU NEP COMPUTER SCIENCE (112) SCHEME ENGINE
+// All Semesters = Exactly 22 Credits
+// ==========================================================================
+
+const SGBAU_NEP_GRADE_SCALE = {
+  "O": 10,
+  "A+": 9,
+  "A": 8,
+  "B+": 7,
+  "B": 6,
+  "C": 5,
+  "P": 4,
+  "F": 0
+};
+
+// Exact Vertical Schemes from University Gazette
+const SGBAU_SCHEME = {
+  sem1: [
+    { vertical: "Major-T1", title: "Fundamentals of Computer", credit: 2 },
+    { vertical: "Major-P1", title: "Lab on Office Automation Tools", credit: 2 },
+    { vertical: "Minor-T", title: "Minor Theory", credit: 2 },
+    { vertical: "Minor-P", title: "Minor Practical", credit: 2 },
+    { vertical: "GOEC-T1", title: "GOEC - I", credit: 2 },
+    { vertical: "GOEC-T2", title: "GOEC - II", credit: 2 },
+    { vertical: "SEC-P3", title: "SEC Laboratory", credit: 2 },
+    { vertical: "AEC-English", title: "AEC English", credit: 1 },
+    { vertical: "AEC-MIL", title: "AEC MIL", credit: 1 },
+    { vertical: "IKS-Generic", title: "Indian Knowledge Systems", credit: 2 },
+    { vertical: "VEC", title: "Value Education Course", credit: 2 },
+    { vertical: "CC", title: "Co-Curricular Course", credit: 2 }
+  ],
+  sem2: [
+    { vertical: "Major-T2", title: "Programming with C", credit: 2 },
+    { vertical: "Major-P4", title: "Lab on Programming with C", credit: 2 },
+    { vertical: "Minor-T", title: "Minor Theory", credit: 2 },
+    { vertical: "Minor-P", title: "Minor Practical", credit: 2 },
+    { vertical: "GOEC-T3", title: "GOEC - III", credit: 2 },
+    { vertical: "GOEC-T4", title: "GOEC - IV", credit: 2 },
+    { vertical: "VSC-P6", title: "VSC Laboratory", credit: 2 },
+    { vertical: "SEC-P7", title: "SEC Laboratory", credit: 2 },
+    { vertical: "AEC-English", title: "AEC English", credit: 1 },
+    { vertical: "AEC-MIL", title: "AEC MIL", credit: 1 },
+    { vertical: "VEC", title: "Value Education Course", credit: 2 },
+    { vertical: "CC", title: "Co-Curricular Course", credit: 2 }
+  ],
+  sem3: [
+    { vertical: "Major-T1", title: "Major Theory - I", credit: 2 },
+    { vertical: "Major-T2", title: "Major Theory - II", credit: 2 },
+    { vertical: "Major-P", title: "Major Laboratory", credit: 2 },
+    { vertical: "IKS-T", title: "IKS in Computational Sciences", credit: 2 },
+    { vertical: "Minor-T", title: "Minor Theory", credit: 2 },
+    { vertical: "Minor-P", title: "Minor Practical", credit: 2 },
+    { vertical: "GOEC-T", title: "GOEC ", credit: 2 },
+    { vertical: "VSC-P", title: "VSC Laboratory", credit: 2 },
+    { vertical: "AEC-English", title: "AEC English", credit: 1 },
+    { vertical: "AEC-MIL", title: "AEC MIL", credit: 1 },
+    { vertical: "FP/CES", title: "Field Project Phase-I", credit: 2 },
+    { vertical: "CC", title: "Co-Curricular Course", credit: 2 }
+  ],
+  sem4: [
+    { vertical: "Major-T1", title: "Major Theory - I", credit: 2 },
+    { vertical: "Major-T2", title: "Major Theory - II", credit: 2 },
+    { vertical: "Major-T3", title: "Major Theory - III", credit: 2 },
+    { vertical: "Major-P", title: "Major Laboratory", credit: 2 },
+    { vertical: "Minor-T", title: "Minor Theory", credit: 2 },
+    { vertical: "Minor-P", title: "Minor Practical", credit: 2 },
+    { vertical: "GOEC-T", title: "GOEC ", credit: 2 },
+    { vertical: "VSC-P", title: "VSC Laboratory", credit: 2 },
+    { vertical: "AEC-English", title: "AEC English", credit: 1 },
+    { vertical: "AEC-MIL", title: "AEC MIL", credit: 1 },
+    { vertical: "FP/CES", title: "Field Project Phase-II", credit: 2 },
+    { vertical: "CC", title: "Co-Curricular Course", credit: 2 }
+  ],
+  sem5: [
+    { vertical: "Major-T7", title: "Major Theory - I", credit: 2 },
+    { vertical: "Major-T8", title: "Major Theory - II", credit: 2 },
+    { vertical: "Major-T9", title: "Advanced Python Programming", credit: 2 },
+    { vertical: "Major-Lab-15", title: "Major Laboratory", credit: 2 },
+    { vertical: "Major-Elec T1", title: "Major Elective - I", credit: 2 },
+    { vertical: "Major-Elec P17", title: "Major Elective Laboratory ", credit: 2 },
+    { vertical: "Minor-T5", title: "Computer Networks & Advanced Python", credit: 2 },
+    { vertical: "Minor-P18", title: "Minor Laboratory", credit: 2 },
+    { vertical: "VSC-P19", title: "VSC Laboratory", credit: 2 },
+    { vertical: "SEC-P", title: "SEC Laboratory", credit: 2 },
+    { vertical: "FP/CES", title: "Field Project Phase-III", credit: 2 }
+  ],
+  sem6: [
+    { vertical: "Major-T10", title: "Major Theory - I", credit: 2 },
+    { vertical: "Major-T11", title: "Major Theory - II", credit: 2 },
+    { vertical: "Major-T12", title: "Major Theory - III", credit: 2 },
+    { vertical: "Major-Lab-20", title: "Major Laboratory", credit: 2 },
+    { vertical: "Major-Elec T12", title: "Major Elective - II", credit: 2 },
+    { vertical: "Major-Elec P22", title: "Major Elective Laboratory ", credit: 2 },
+    { vertical: "Minor-T6", title: "Minor Theory", credit: 2 },
+    { vertical: "Minor-P23", title: "Minor Laboratory", credit: 2 },
+    { vertical: "VSC-P24", title: "VSC Laboratory", credit: 2 },
+    { vertical: "Internship", title: "Internship / Apprenticeship", credit: 4 }
+  ]
+};
+
+// Switch Tabs
+function switchNepTab(tab) {
+  const sgpaView = document.getElementById('nepSgpaView');
+  const cgpaView = document.getElementById('nepCgpaView');
+  const sgpaBtn = document.getElementById('tabSgpaBtn');
+  const cgpaBtn = document.getElementById('tabCgpaBtn');
+  const scoreTitle = document.getElementById('dispScoreTitle');
+
+  if (tab === 'sgpa') {
+    sgpaView.classList.remove('hidden');
+    cgpaView.classList.add('hidden');
+    sgpaBtn.classList.add('active');
+    cgpaBtn.classList.remove('active');
+    scoreTitle.textContent = "Semester SGPA";
+    calculateNepSgpa();
+  } else {
+    sgpaView.classList.add('hidden');
+    cgpaView.classList.remove('hidden');
+    sgpaBtn.classList.remove('active');
+    cgpaBtn.classList.add('active');
+    scoreTitle.textContent = "Cumulative CGPA";
+    calculateNepCgpa();
+  }
+}
+
+// Render Selected Semester Verticals
+function renderNepVerticals() {
+  const select = document.getElementById('nepSemDropdown');
+  const container = document.getElementById('nepVerticalsContainer');
+  if (!select || !container) return;
+
+  const semKey = select.value;
+  const courses = SGBAU_SCHEME[semKey] || [];
+  container.innerHTML = '';
+
+  courses.forEach((c) => {
+    let tagClass = "v-major";
+    const v = c.vertical.toLowerCase();
+    if (v.includes("minor")) tagClass = "v-minor";
+    else if (v.includes("vsc") || v.includes("sec")) tagClass = "v-vsc";
+    else if (v.includes("iks") || v.includes("goec")) tagClass = "v-iks";
+    else if (v.includes("fp") || v.includes("intern")) tagClass = "v-fp";
+
+    const row = document.createElement('div');
+    row.className = 'nep-v-row';
+    row.innerHTML = `
+      <span class="v-tag ${tagClass}">${c.vertical}</span>
+      <span class="v-title">${c.title}</span>
+      <span class="v-credit" data-credit="${c.credit}">${c.credit}</span>
+      <select class="v-grade-select" onchange="calculateNepSgpa()">
+        <option value="O">O (10 Pts)</option>
+        <option value="A+" selected>A+ (9 Pts)</option>
+        <option value="A">A (8 Pts)</option>
+        <option value="B+">B+ (7 Pts)</option>
+        <option value="B">B (6 Pts)</option>
+        <option value="C">C (5 Pts)</option>
+        <option value="P">P (4 Pts)</option>
+        <option value="F">F (0 Pts)</option>
+      </select>
+      <span class="v-pts">0</span>
+    `;
+    container.appendChild(row);
+  });
+
+  calculateNepSgpa();
+}
+
+// Live Calculate SGPA
+function calculateNepSgpa() {
+  const rows = document.querySelectorAll('.nep-v-row');
+  let totalCredits = 0;
+  let totalPoints = 0;
+
+  rows.forEach(row => {
+    const credit = parseFloat(row.querySelector('.v-credit').dataset.credit) || 0;
+    const grade = row.querySelector('.v-grade-select').value;
+    const gradePoint = SGBAU_NEP_GRADE_SCALE[grade] !== undefined ? SGBAU_NEP_GRADE_SCALE[grade] : 0;
+    const coursePoints = credit * gradePoint;
+
+    row.querySelector('.v-pts').textContent = coursePoints;
+    totalCredits += credit;
+    totalPoints += coursePoints;
+  });
+
+  const sgpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+  let percentage = sgpa > 0 ? ((sgpa - 0.75) * 10) : 0;
+  if (percentage < 0) percentage = 0;
+
+  document.getElementById('dispTotalCredits').textContent = totalCredits;
+  document.getElementById('dispCreditPoints').textContent = totalPoints;
+  document.getElementById('dispScoreVal').textContent = sgpa.toFixed(2);
+  document.getElementById('dispPercentVal').textContent = percentage.toFixed(2) + '%';
+}
+
+// Setup CGPA Grid (6 Semesters, 22 Credits Each)
+function setupNepCgpaGrid() {
+  const container = document.getElementById('nepCgpaGrid');
+  if (!container) return;
+  container.innerHTML = '';
+
+  for (let s = 1; s <= 6; s++) {
+    const card = document.createElement('div');
+    card.className = 'cgpa-sem-card';
+    card.innerHTML = `
+      <label>Semester ${s} (22 Credits)</label>
+      <div class="cgpa-sem-inputs">
+        <input type="number" step="0.01" min="0" max="10" class="calc-input sem-sgpa-val" placeholder="SGPA" oninput="calculateNepCgpa()">
+      </div>
+    `;
+    container.appendChild(card);
+  }
+}
+
+// Calculate Cumulative CGPA
+function calculateNepCgpa() {
+  const inputs = document.querySelectorAll('.sem-sgpa-val');
+  let totalCredits = 0;
+  let totalWeighted = 0;
+
+  inputs.forEach(input => {
+    const val = parseFloat(input.value);
+    if (!isNaN(val) && val > 0) {
+      totalCredits += 22; // Har semester 22 credits ka hai
+      totalWeighted += (val * 22);
+    }
+  });
+
+  const cgpa = totalCredits > 0 ? (totalWeighted / totalCredits) : 0;
+  let percentage = cgpa > 0 ? ((cgpa - 0.75) * 10) : 0;
+  if (percentage < 0) percentage = 0;
+
+  document.getElementById('dispTotalCredits').textContent = totalCredits;
+  document.getElementById('dispCreditPoints').textContent = totalWeighted.toFixed(1);
+  document.getElementById('dispScoreVal').textContent = cgpa.toFixed(2);
+  document.getElementById('dispPercentVal').textContent = percentage.toFixed(2) + '%';
+}
+
+function resetCurrentSemGrades() {
+  document.querySelectorAll('.v-grade-select').forEach(sel => sel.value = 'A');
+  calculateNepSgpa();
+}
+
+function resetCgpaAll() {
+  document.querySelectorAll('.sem-sgpa-val').forEach(inp => inp.value = '');
+  calculateNepCgpa();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  renderNepVerticals();
+  setupNepCgpaGrid();
+});
