@@ -6938,3 +6938,547 @@ mark.search-highlight {
 .fld-node:focus-visible .fld-node-capsule {
   transform: rotateZ(12deg) scale(1.08) translateY(-4px) !important;
 }
+
+
+
+/* ==========================================================================
+   FORSKO COMMUNITY NOTES & PYQ CONTRIBUTION SECTION STYLES
+   ========================================================================== */
+
+.contribute-section {
+  position: relative;
+  background-color: #0b1120;
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+/* Ambient Green/Emerald Glow */
+.contribute-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 380px;
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.14) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 75%);
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+.contribute-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass Card */
+.contribute-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.9));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  border-radius: 24px;
+  padding: 44px 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contribute-card:hover {
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(16, 185, 129, 0.25);
+}
+
+.contribute-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Header Badge */
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.4) !important;
+}
+
+.badge-emerald i {
+  color: #10b981 !important;
+}
+
+.contribute-title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.title-gradient-green {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contribute-desc {
+  color: #94a3b8;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* Perks List */
+.contribute-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.perk-ico {
+  color: #34d399;
+  font-size: 0.95rem;
+}
+
+/* Buttons */
+.contribute-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-contrib-form {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.btn-contrib-form:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-contrib-wa {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25d366;
+  padding: 13px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.btn-contrib-wa:hover {
+  background: #25d366;
+  color: #0b1120;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Right Visual Mock Dropzone */
+.contribute-visual-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contrib-dropzone-mock {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px dashed rgba(52, 211, 153, 0.4);
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contrib-dropzone-mock:hover {
+  border-color: #34d399;
+  transform: scale(1.02);
+}
+
+.drop-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.drop-title {
+  color: #ffffff;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.drop-sub {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.drop-pill-tags {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.d-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #60a5fa;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.contrib-count-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.contrib-count-chip b {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contribute-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .contribute-card {
+    padding: 30px 20px;
+  }
+  .contribute-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contribute-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-contrib-form, .btn-contrib-wa {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FORSKO SGBAU NEP VERTICALS CALCULATOR CSS
+   ========================================================================== */
+.calc-section {
+  padding: 60px 24px;
+  background-color: #0b1120;
+  position: relative;
+}
+
+.calc-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.calc-card {
+  background: rgba(30, 41, 59, 0.7);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.15);
+}
+
+.calc-tabs {
+  display: flex;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.calc-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.calc-tab-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Sem Dropdown Toolbar */
+.nep-sem-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.nep-sem-toolbar label {
+  color: #38bdf8;
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nep-select-lg {
+  max-width: 300px;
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+/* Table Header */
+.calc-table-header {
+  display: grid;
+  grid-template-columns: 140px 1.8fr 75px 135px 65px;
+  gap: 12px;
+  padding: 0 10px 10px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Individual Vertical Row */
+.nep-v-row {
+  display: grid;
+  grid-template-columns: 140px 1.8fr 75px 135px 65px;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s ease;
+}
+
+.nep-v-row:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 8px;
+}
+
+/* Vertical Tag (Badges) */
+.v-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  font-family: monospace;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.v-tag.v-major { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); }
+.v-tag.v-minor { background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.4); }
+.v-tag.v-vsc   { background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.4); }
+.v-tag.v-iks   { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4); }
+.v-tag.v-fp    { background: rgba(244, 63, 94, 0.15);  color: #fb7185; border-color: rgba(244, 63, 94, 0.4); }
+
+.v-title {
+  font-size: 0.86rem;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.v-credit {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #38bdf8;
+  text-align: center;
+}
+
+.v-grade-select {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.v-grade-select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.v-pts {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #34d399;
+  text-align: center;
+}
+
+/* Results Box */
+.calc-result-box {
+  margin-top: 22px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.18);
+}
+
+.result-metric { text-align: center; }
+.metric-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+}
+
+.highlight-cyan { color: #38bdf8; text-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
+.highlight-blue { color: #60a5fa; }
+.result-divider { width: 1px; height: 35px; background: rgba(255, 255, 255, 0.1); }
+
+.calc-footnote {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.cgpa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cgpa-sem-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.cgpa-sem-card label { display: block; font-size: 0.8rem; font-weight: 700; color: #60a5fa; margin-bottom: 4px; }
+.cgpa-sem-inputs { display: flex; gap: 8px; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .calc-table-header { display: none; }
+  .nep-v-row {
+    grid-template-columns: 1fr 1fr;
+    background: rgba(15, 23, 42, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .nep-v-row .v-title { grid-column: span 2; font-size: 0.9rem; }
+  .nep-v-row .v-credit::before { content: "Credits: "; font-size: 0.75rem; color: #94a3b8; }
+  .nep-v-row .v-pts::before { content: "Points: "; font-size: 0.75rem; color: #94a3b8; }
+  .nep-sem-toolbar { flex-direction: column; align-items: stretch; gap: 8px; }
+  .nep-select-lg { max-width: 100%; }
+  .cgpa-grid { grid-template-columns: 1fr; }
+  .calc-result-box { flex-direction: column; gap: 14px; }
+  .result-divider { width: 75%; height: 1px; }
+}
