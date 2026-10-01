@@ -1731,3 +1731,73 @@ document.addEventListener('DOMContentLoaded', initCounterStats);
   }
 })();
 
+
+
+//new changing time
+
+// ==========================================
+// Forsko - Dynamic Relative Time Calculator
+// ==========================================
+function formatTimeAgo(dateString) {
+  if (!dateString) return "";
+
+  const now = new Date();
+  const past = new Date(dateString);
+  const diffInSeconds = Math.floor((now - past) / 1000);
+
+  // Agar date galat ya future ki ho
+  if (isNaN(past.getTime()) || diffInSeconds < 0) {
+    return "Recently";
+  }
+
+  // Seconds & Minutes
+  if (diffInSeconds < 60) return "Just now";
+  
+  const diffInMinutes = Math.floor(diffInSeconds / 60);
+  if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+
+  // Hours
+  const diffInHours = Math.floor(diffInMinutes / 60);
+  if (diffInHours < 24) return `${diffInHours}h ago`;
+
+  // Days
+  const diffInDays = Math.floor(diffInHours / 24);
+  if (diffInDays === 1) return "1 day ago";
+  if (diffInDays < 7) return `${diffInDays} days ago`;
+
+  // Weeks
+  const diffInWeeks = Math.floor(diffInDays / 7);
+  if (diffInWeeks === 1) return "1 week ago";
+  if (diffInWeeks < 4) return `${diffInWeeks} weeks ago`;
+
+  // Months
+  const diffInMonths = Math.floor(diffInDays / 30);
+  if (diffInMonths === 1) return "1 month ago";
+  if (diffInMonths < 12) return `${diffInMonths} months ago`;
+
+  // Years
+  const diffInYears = Math.floor(diffInDays / 365);
+  return diffInYears === 1 ? "1 year ago" : `${diffInYears} years ago`;
+}
+
+// Cards me dynamically text inject karne ka logic
+function initRelativeTimeStamps() {
+  const dateElements = document.querySelectorAll('.update-date[data-date]');
+
+  dateElements.forEach(el => {
+    const rawDate = el.getAttribute('data-date');
+    const relativeTime = formatTimeAgo(rawDate);
+
+    // Text inject karein
+    let textSpan = el.querySelector('.time-text');
+    if (!textSpan) {
+      textSpan = document.createElement('span');
+      textSpan.className = 'time-text';
+      el.appendChild(textSpan);
+    }
+    textSpan.textContent = relativeTime;
+  });
+}
+
+// Page load hone par run karein
+document.addEventListener('DOMContentLoaded', initRelativeTimeStamps);
