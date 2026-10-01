@@ -638,7 +638,16 @@ body {
 }
 
 .update-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Clock icon aur text ke beech thoda gap */
   color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.update-date i {
   font-size: 0.75rem;
 }
 
