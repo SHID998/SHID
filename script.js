@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeFabMenu();
 
         window.location.href =
-          "https://forms.gle/d7s2tebfezbqtuK68";
+          "https://forms.gle/2wtCeo6uMhYx9Dpy8";
       });
     }
 
