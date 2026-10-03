@@ -1576,6 +1576,163 @@ mark.search-highlight {
   }
 }
 
+
+/* ==========================================================================
+   FORSKO SMART SEARCH: RECENT SEARCHES & QUICK TAGS STYLES
+   ========================================================================== */
+
+/* Suggestions Container */
+.search-suggestions-box {
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Suggestion Group Header */
+.suggest-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.suggest-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.suggest-label i {
+  color: #38bdf8;
+  font-size: 0.8rem;
+}
+
+.btn-clear-history {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-clear-history:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Quick Tags Container */
+.quick-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Individual Tag Chip */
+.quick-tag-chip {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.quick-tag-chip i {
+  color: #60a5fa;
+  font-size: 0.75rem;
+}
+
+.quick-tag-chip:hover {
+  background: #3b82f6;
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.4);
+}
+
+.quick-tag-chip:hover i {
+  color: #ffffff;
+}
+
+/* Recent Searches List */
+.recent-searches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recent-search-item:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+  padding-left: 15px;
+}
+
+.recent-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recent-item-left i {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.btn-remove-single-recent {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  transition: color 0.2s ease;
+}
+
+.btn-remove-single-recent:hover {
+  color: #f87171;
+}
+
+/* No History Placeholder */
+.no-recent-text {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+  padding: 4px 6px;
+}
+
 /* ==========================================================================
    Forsko - Unique & Distinct Backgrounds for Every Section
    ========================================================================== */
