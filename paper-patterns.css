@@ -29,6 +29,14 @@
   padding: 0;
 }
 
+.title-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 html {
   scroll-behavior: smooth;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -115,8 +123,8 @@ ul {
 }
 
 .logo-image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
 }
 
@@ -380,7 +388,7 @@ ul {
 
 .sample-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 
