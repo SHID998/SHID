@@ -109,8 +109,8 @@
         <a href="syllabus.html" class="nav-link">Syllabus</a>
         <a href="notes.html" class="nav-link">Notes</a>
         <a href="pyqs.html" class="nav-link">PYQs</a>
-        <a href="question-bank.html" class="nav-link">Question Bank</a>
-        <a href="paper-patterns.html" class="nav-link">Paper Patterns</a>
+        <a href="question-bank.html" class="nav-link">Question Banks</a>
+        <a href="paper-patterns.html" class="nav-link">Sample Papers</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
@@ -171,6 +171,93 @@
 
    <!-- Hero Right: Dynamic FORSKO Visual System -->
     <div class="hero-illustration" id="forskoHeroVisual">
+
+
+
+        <!-- 2. FORSKO KNOWLEDGE UNIVERSE -->
+      <div class="fk-hero-visual" id="fkHeroVisual" aria-hidden="true" style="display:none;">
+        <div class="fk-universe-stage" id="fkKnowledgeUniverse" role="region" aria-label="Forsko Orbital Knowledge Network">
+          <div class="fk-stage-backdrop" aria-hidden="true"></div>
+          <div class="fk-cosmic-grid" aria-hidden="true"></div>
+          <div class="fk-starfield" aria-hidden="true">
+            <span class="fk-spec fk-spec-1"></span>
+            <span class="fk-spec fk-spec-2"></span>
+            <span class="fk-spec fk-spec-3"></span>
+            <span class="fk-spec fk-spec-4"></span>
+            <span class="fk-spec fk-spec-5"></span>
+            <span class="fk-spec fk-spec-6"></span>
+          </div>
+
+          <svg class="fk-svg-radar" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="fkCosmicCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+                <stop offset="60%" stop-color="#1e293b" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="290" cy="290" r="260" fill="url(#fkCosmicCoreGlow)" />
+            <circle class="fk-radar-ring fk-ring-1" cx="290" cy="290" r="120" />
+            <circle class="fk-radar-ring fk-ring-2" cx="290" cy="290" r="185" />
+            <circle class="fk-radar-ring fk-ring-3" cx="290" cy="290" r="250" />
+            <g class="fk-radar-crosshairs">
+              <line x1="290" y1="30" x2="290" y2="40" />
+              <line x1="290" y1="540" x2="290" y2="550" />
+              <line x1="30" y1="290" x2="40" y2="290" />
+              <line x1="540" y1="290" x2="550" y2="290" />
+            </g>
+          </svg>
+
+          <!-- Orbit 1 -->
+          <div class="fk-orbit-tier fk-tier-1" data-orbit="1">
+            <a href="syllabus.html" class="fk-node-carrier fk-pos-1-top" data-resource="syllabus">
+              <div class="fk-node-capsule fk-theme-cyan"><i class="fa-solid fa-book-bookmark fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Syllabus</strong></div>
+            </a>
+            <a href="notes.html" class="fk-node-carrier fk-pos-1-bottom" data-resource="notes">
+              <div class="fk-node-capsule fk-theme-mint"><i class="fa-solid fa-file-lines fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Notes</strong></div>
+            </a>
+          </div>
+
+          <!-- Orbit 2 -->
+          <div class="fk-orbit-tier fk-tier-2" data-orbit="2">
+            <a href="pyqs.html" class="fk-node-carrier fk-pos-2-left" data-resource="pyqs">
+              <div class="fk-node-capsule fk-theme-amber"><i class="fa-solid fa-clock-rotate-left fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">PYQs</strong></div>
+            </a>
+            <a href="question-bank.html" class="fk-node-carrier fk-pos-2-right" data-resource="qb">
+              <div class="fk-node-capsule fk-theme-cobalt"><i class="fa-solid fa-database fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Question Banks</strong></div>
+            </a>
+          </div>
+
+          <!-- Orbit 3 -->
+          <div class="fk-orbit-tier fk-tier-3" data-orbit="3">
+            <a href="practical.html" class="fk-node-carrier fk-pos-3-bl" data-resource="practicals">
+              <div class="fk-node-capsule fk-theme-orchid"><i class="fa-solid fa-laptop-code fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Practicals</strong></div>
+            </a>
+            <a href="paper-patterns.html" class="fk-node-carrier fk-pos-3-tr" data-resource="patterns">
+              <div class="fk-node-capsule fk-theme-rose"><i class="fa-solid fa-chart-pie fk-ico"></i></div>
+              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Paper Patterns</strong></div>
+            </a>
+          </div>
+
+          <!-- Central Core -->
+          <div class="fk-nucleus" id="fkCore" aria-label="Forsko Platform Core">
+            <div class="fk-nucleus-energy-pulse"></div>
+            <div class="fk-nucleus-plasma-aura"></div>
+            <div class="fk-nucleus-outer-rotor"></div>
+            <div class="fk-nucleus-inner-shield"></div>
+            <div class="fk-nucleus-pedestal">
+              <div class="fk-pedestal-specular"></div>
+              <img src="forsko-logo.png" alt="Forsko Core Logo" class="fk-nucleus-emblem fk-emblem-primary" onerror="this.src='FORSKO2.png'">
+              <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fk-nucleus-emblem fk-emblem-secondary">
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- 1. FORSKO HOLOGRAPHIC RESOURCE TILES -->
       <div class="fh-hero-visual" id="fhHeroVisual" aria-hidden="false">
@@ -269,90 +356,7 @@
         </div>
       </div>
 
-      <!-- 2. FORSKO KNOWLEDGE UNIVERSE -->
-      <div class="fk-hero-visual" id="fkHeroVisual" aria-hidden="true" style="display:none;">
-        <div class="fk-universe-stage" id="fkKnowledgeUniverse" role="region" aria-label="Forsko Orbital Knowledge Network">
-          <div class="fk-stage-backdrop" aria-hidden="true"></div>
-          <div class="fk-cosmic-grid" aria-hidden="true"></div>
-          <div class="fk-starfield" aria-hidden="true">
-            <span class="fk-spec fk-spec-1"></span>
-            <span class="fk-spec fk-spec-2"></span>
-            <span class="fk-spec fk-spec-3"></span>
-            <span class="fk-spec fk-spec-4"></span>
-            <span class="fk-spec fk-spec-5"></span>
-            <span class="fk-spec fk-spec-6"></span>
-          </div>
-
-          <svg class="fk-svg-radar" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <radialGradient id="fkCosmicCoreGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
-                <stop offset="60%" stop-color="#1e293b" stop-opacity="0.08" />
-                <stop offset="100%" stop-color="transparent" stop-opacity="0" />
-              </radialGradient>
-            </defs>
-            <circle cx="290" cy="290" r="260" fill="url(#fkCosmicCoreGlow)" />
-            <circle class="fk-radar-ring fk-ring-1" cx="290" cy="290" r="120" />
-            <circle class="fk-radar-ring fk-ring-2" cx="290" cy="290" r="185" />
-            <circle class="fk-radar-ring fk-ring-3" cx="290" cy="290" r="250" />
-            <g class="fk-radar-crosshairs">
-              <line x1="290" y1="30" x2="290" y2="40" />
-              <line x1="290" y1="540" x2="290" y2="550" />
-              <line x1="30" y1="290" x2="40" y2="290" />
-              <line x1="540" y1="290" x2="550" y2="290" />
-            </g>
-          </svg>
-
-          <!-- Orbit 1 -->
-          <div class="fk-orbit-tier fk-tier-1" data-orbit="1">
-            <a href="syllabus.html" class="fk-node-carrier fk-pos-1-top" data-resource="syllabus">
-              <div class="fk-node-capsule fk-theme-cyan"><i class="fa-solid fa-book-bookmark fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Syllabus</strong></div>
-            </a>
-            <a href="notes.html" class="fk-node-carrier fk-pos-1-bottom" data-resource="notes">
-              <div class="fk-node-capsule fk-theme-mint"><i class="fa-solid fa-file-lines fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Notes</strong></div>
-            </a>
-          </div>
-
-          <!-- Orbit 2 -->
-          <div class="fk-orbit-tier fk-tier-2" data-orbit="2">
-            <a href="pyqs.html" class="fk-node-carrier fk-pos-2-left" data-resource="pyqs">
-              <div class="fk-node-capsule fk-theme-amber"><i class="fa-solid fa-clock-rotate-left fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">PYQs</strong></div>
-            </a>
-            <a href="question-bank.html" class="fk-node-carrier fk-pos-2-right" data-resource="qb">
-              <div class="fk-node-capsule fk-theme-cobalt"><i class="fa-solid fa-database fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-below"><strong class="fk-hud-title">Question Banks</strong></div>
-            </a>
-          </div>
-
-          <!-- Orbit 3 -->
-          <div class="fk-orbit-tier fk-tier-3" data-orbit="3">
-            <a href="practical.html" class="fk-node-carrier fk-pos-3-bl" data-resource="practicals">
-              <div class="fk-node-capsule fk-theme-orchid"><i class="fa-solid fa-laptop-code fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Practicals</strong></div>
-            </a>
-            <a href="paper-patterns.html" class="fk-node-carrier fk-pos-3-tr" data-resource="patterns">
-              <div class="fk-node-capsule fk-theme-rose"><i class="fa-solid fa-chart-pie fk-ico"></i></div>
-              <div class="fk-hud-tooltip fk-tooltip-above"><strong class="fk-hud-title">Paper Patterns</strong></div>
-            </a>
-          </div>
-
-          <!-- Central Core -->
-          <div class="fk-nucleus" id="fkCore" aria-label="Forsko Platform Core">
-            <div class="fk-nucleus-energy-pulse"></div>
-            <div class="fk-nucleus-plasma-aura"></div>
-            <div class="fk-nucleus-outer-rotor"></div>
-            <div class="fk-nucleus-inner-shield"></div>
-            <div class="fk-nucleus-pedestal">
-              <div class="fk-pedestal-specular"></div>
-              <img src="forsko-logo.png" alt="Forsko Core Logo" class="fk-nucleus-emblem fk-emblem-primary" onerror="this.src='FORSKO2.png'">
-              <img src="FORSKO2.png" alt="Forsko Alternate Logo" class="fk-nucleus-emblem fk-emblem-secondary">
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <!-- 3. FORSKO LEARNING DNA -->
       <div class="fld-hero-visual" id="fldHeroVisualMode" aria-hidden="true" style="display:none;">
@@ -485,7 +489,7 @@
     </div>
   </div>
 </section>
-</section>
+
 
 
   <!-- Glowing Line Divider -->
@@ -508,7 +512,7 @@
         <i class="fa-solid fa-magnifying-glass search-icon-sm"></i>
         <span>Global Search</span>
       </div>
-      <h2 class="search-heading">Search Resources</h2>
+      <h2 class="search-heading">Search <span class="title-gradient">Resources</span></h2>
       <p class="section-subtitle"><b>Find everything you need in one place, effortlessly.</b></p>
     </div>
 
@@ -2476,7 +2480,317 @@ if (searchBtn) {
 }
 
 })();
+
+(function() {
+  var input = document.getElementById('searchInput');
+  var dropdown = document.getElementById('searchDropdown');
+  var searchBtn = document.getElementById('searchBtn');
+  var clearBtn = document.getElementById('searchClearBtn');
+  var searchBox = document.getElementById('searchCardBox');
+
+  if (!input || !dropdown) return;
+
+  var RECENT_STORAGE_KEY = 'forsko_recent_search_history';
+
+  // ⚡ 8 Popular Quick Tags
+  var QUICK_TAGS = [
+    { label: "Data Structures", icon: "fa-database" },
+    { label: "Programming with C", icon: "fa-code" },
+    { label: "RDBMS", icon: "fa-server" },
+    { label: "Core Java", icon: "fa-cube" },
+    { label: "Python Programming", icon: "fa-laptop-code" },
+    { label: "Winter PYQs", icon: "fa-clock-rotate-left" },
+    { label: "NEP Syllabus", icon: "fa-book-bookmark" },
+    { label: "Question Bank", icon: "fa-boxes-stacked" }
+  ];
+
+  // ==========================================
+  // 1. RECENT SEARCHES STORAGE
+  // ==========================================
+  function getRecentSearches() {
+    try {
+      var saved = localStorage.getItem(RECENT_STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveRecentSearch(term) {
+    if (!term || !term.trim()) return;
+    term = term.trim();
+    try {
+      var history = getRecentSearches();
+      history = history.filter(function(item) {
+        return item.toLowerCase() !== term.toLowerCase();
+      });
+      history.unshift(term);
+      if (history.length > 5) history = history.slice(0, 5);
+      localStorage.setItem(RECENT_STORAGE_KEY, JSON.stringify(history));
+    } catch (e) {}
+  }
+
+  function deleteRecentSearch(term, e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    try {
+      var history = getRecentSearches();
+      history = history.filter(function(item) { return item !== term; });
+      localStorage.setItem(RECENT_STORAGE_KEY, JSON.stringify(history));
+      renderDefaultSuggestions();
+    } catch (e) {}
+  }
+
+  function clearAllRecentSearches(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    try {
+      localStorage.removeItem(RECENT_STORAGE_KEY);
+      renderDefaultSuggestions();
+    } catch (e) {}
+  }
+
+  function showDropdown() {
+    dropdown.classList.remove('hidden');
+    dropdown.style.display = 'block';
+    dropdown.style.visibility = 'visible';
+    dropdown.style.opacity = '1';
+  }
+
+  function hideDropdown() {
+    dropdown.classList.add('hidden');
+    dropdown.style.display = 'none';
+  }
+
+  // ==========================================
+  // 2. RENDER QUICK TAGS & RECENT SEARCHES
+  // ==========================================
+  function renderDefaultSuggestions() {
+    var history = getRecentSearches();
+    var html = '<div class="search-suggestions-box">';
+
+    // Recent Searches
+    html += '<div>';
+    html += '  <div class="suggest-group-header">';
+    html += '    <span class="suggest-label"><i class="fa-solid fa-clock-rotate-left"></i> Recent Searches</span>';
+    if (history.length > 0) {
+      html += '    <button type="button" class="btn-clear-history" id="clearAllHistoryBtn">Clear All</button>';
+    }
+    html += '  </div>';
+
+    if (history.length > 0) {
+      html += '  <div class="recent-searches-list">';
+      history.forEach(function(item) {
+        html += '    <div class="recent-search-item" data-term="' + item + '">';
+        html += '      <span class="recent-item-left"><i class="fa-solid fa-magnifying-glass"></i> ' + item + '</span>';
+        html += '      <button type="button" class="btn-remove-single-recent" data-delete="' + item + '"><i class="fa-solid fa-xmark"></i></button>';
+        html += '    </div>';
+      });
+      html += '  </div>';
+    } else {
+      html += '  <p class="no-recent-text">No recent searches yet.</p>';
+    }
+    html += '</div>';
+
+    // Quick Tags
+    html += '<div>';
+    html += '  <div class="suggest-group-header">';
+    html += '    <span class="suggest-label"><i class="fa-solid fa-bolt"></i> Popular Quick Tags</span>';
+    html += '  </div>';
+    html += '  <div class="quick-tags-wrapper">';
+    QUICK_TAGS.forEach(function(tag) {
+      html += '    <span class="quick-tag-chip" data-term="' + tag.label + '">';
+      html += '      <i class="fa-solid ' + tag.icon + '"></i> ' + tag.label;
+      html += '    </span>';
+    });
+    html += '  </div>';
+    html += '</div>';
+
+    html += '</div>';
+
+    dropdown.innerHTML = html;
+    showDropdown();
+
+    bindSuggestionEvents();
+  }
+
+  function bindSuggestionEvents() {
+    // Tag ya Recent search par click
+    var chips = dropdown.querySelectorAll('.quick-tag-chip, .recent-search-item');
+    chips.forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Event bubble hokar dropdown ko band nahi hone dega
+
+        if (e.target.closest('.btn-remove-single-recent')) return;
+
+        var term = this.getAttribute('data-term');
+        if (term) {
+          input.value = term;
+          saveRecentSearch(term);
+          performSearch(); // Suggestions ko band karke direct results dikhayega
+        }
+      });
+    });
+
+    // Delete single item
+    var deleteBtns = dropdown.querySelectorAll('.btn-remove-single-recent');
+    deleteBtns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        var term = this.getAttribute('data-delete');
+        deleteRecentSearch(term, e);
+      });
+    });
+
+    // Clear all
+    var clearAllBtn = dropdown.querySelector('#clearAllHistoryBtn');
+    if (clearAllBtn) {
+      clearAllBtn.addEventListener('click', clearAllRecentSearches);
+    }
+  }
+
+  // ==========================================
+  // 3. LIVE SEARCH FILTER (Actual Results)
+  // ==========================================
+  function performSearch() {
+    var query = input.value.trim().toLowerCase();
+
+    if (query.length === 0) {
+      if (clearBtn) clearBtn.style.display = 'none';
+      renderDefaultSuggestions();
+      return;
+    }
+
+    if (clearBtn) clearBtn.style.display = 'flex';
+
+    // Search Database se filter karein
+    var matches = searchDatabase.filter(function(item) {
+      var title = (item.title || '').toLowerCase();
+      var desc = (item.desc || '').toLowerCase();
+      return title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+    });
+
+    dropdown.innerHTML = '';
+
+    if (matches.length === 0) {
+      dropdown.innerHTML = `
+        <div style="text-align:center; padding:24px; color:#94A3B8;">
+          <i class="fa-solid fa-ghost" style="font-size:2rem; color:#3B82F6; margin-bottom:10px;"></i>
+          <br><b style="color:#FFF;">No material found</b><br>
+          Try searching "Notes", "PYQs", or choose a Quick Tag.
+        </div>
+      `;
+    } else {
+      matches.slice(0, 20).forEach(function(item) {
+        var card = document.createElement('a');
+        card.href = item.url;
+        card.className = 'search-result-card';
+
+        var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var regex = new RegExp('(' + escapedQuery + ')', 'gi');
+        var highlightedTitle = item.title.replace(regex, "<span style='color:#60A5FA;'>$1</span>");
+
+        card.innerHTML = '<h4>' + highlightedTitle + '</h4><p>' + item.desc + '</p>';
+
+        // Card click par dropdown band hokar seedha page khulega
+        card.addEventListener('click', function(e) {
+          saveRecentSearch(item.title);
+          hideDropdown();
+        });
+
+        dropdown.appendChild(card);
+      });
+    }
+
+    showDropdown();
+  }
+
+  // ==========================================
+  // 4. DIRECT OPEN ON ENTER OR SEARCH BUTTON
+  // ==========================================
+  function executeDirectSearch() {
+    var query = input.value.trim().toLowerCase();
+    if (!query) {
+      input.focus();
+      return;
+    }
+
+    saveRecentSearch(query);
+
+    // Pehla best match dhundein
+    var firstMatch = searchDatabase.find(function(item) {
+      var title = (item.title || '').toLowerCase();
+      var desc = (item.desc || '').toLowerCase();
+      return title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+    });
+
+    if (firstMatch) {
+      hideDropdown(); // Automatically dropdown band karega
+      window.location.href = firstMatch.url; // Seedha page ya PDF open karega!
+    } else {
+      performSearch();
+    }
+  }
+
+  // ==========================================
+  // 5. EVENT LISTENERS
+  // ==========================================
+
+  // Focus aane par suggestions dikhayein
+  input.addEventListener('focus', function() {
+    if (input.value.trim().length > 0) {
+      performSearch();
+    } else {
+      renderDefaultSuggestions();
+    }
+  });
+
+  input.addEventListener('input', performSearch);
+
+  // Keyboard Enter dabane par direct redirect
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      executeDirectSearch();
+    }
+  });
+
+  // Search Action Button
+  if (searchBtn) {
+    searchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      executeDirectSearch();
+    });
+  }
+
+  // Clear button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      input.value = '';
+      clearBtn.style.display = 'none';
+      renderDefaultSuggestions();
+      input.focus();
+    });
+  }
+
+  // Bahar click karne par hi dropdown band ho
+  document.addEventListener('click', function(e) {
+    if (searchBox && dropdown) {
+      if (!searchBox.contains(e.target)) {
+        hideDropdown();
+      }
+    }
+  });
+
+})();
 </script>
+
+
 
 
 <!-- Live Typing Placeholder Animation Script -->
@@ -2800,7 +3114,7 @@ if (searchBtn) {
       </button>
 
       <span class="sub-badge"><i class="fa-solid fa-bolt"></i>Real-Time Feed</span>
-      <h2>Latest Updates</h2>
+      <h2>Latest <span class="title-gradient">Updates</span></h2>
       <p class="section-subtitle"><b>Stay informed with the newest study notes, past papers, and university curriculum changes.</b></p>
     </div>
 
@@ -3106,7 +3420,7 @@ if (searchBtn) {
       <span class="countdown-main-badge">
         <i class="fa-solid fa-calendar-days"></i> Academic Schedule
       </span>
-      <h2 class="countdown-main-title">Upcoming Examination Countdowns</h2>
+      <h2 class="countdown-main-title">Upcoming Examination <span class="title-gradient">Countdowns</span></h2>
       <p class="countdown-main-subtitle"><b>Track your remaining study time and stay motivated for SGBAU university exams.</b></p>
     </div>
 
@@ -3289,7 +3603,7 @@ if (searchBtn) {
     <div class="section-header">
       <div class="header-pill-badge">
         <i class="fa-solid fa-graduation-cap"></i>
-        <span>Official SGBAU NEP Scheme (Computer Science - 112)</span>
+        <span>Official SGBAU NEP Scheme (Computer Science)</span>
       </div>
       <h2 class="calc-main-title">NEP SGPA & CGPA <span class="title-gradient">Calculator</span></h2>
       <p class="section-subtitle"><b>Based on SGBAU official Verticals, Credits (22 Cr/Sem) and 10-Point Grade scale.</b></p>
@@ -3401,7 +3715,7 @@ if (searchBtn) {
 
 <div class="section-header">
       <span class="sub-badge"><i class="fa-solid fa-boxes-stacked"></i>Resources Count</span>
-      <h2>Number of Resources</h2>
+      <h2>Number of <span class="title-gradient">Resources</span></h2>
     </div>
 
   <!-- Ambient Section Glow -->
@@ -3572,6 +3886,8 @@ if (searchBtn) {
    <!-- ================================================== -->
 <!-- FORSKO COMMUNITY NOTES & PYQ CONTRIBUTION CTA      -->
 <!-- ================================================== -->
+
+
 <section class="contribute-section" id="contribute">
   <!-- Background Glow Blob -->
   <div class="contribute-ambient-glow"></div>
